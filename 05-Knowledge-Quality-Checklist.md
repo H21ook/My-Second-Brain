@@ -68,6 +68,8 @@ A note does not need to satisfy every item perfectly, but it should meet the maj
 
 -  The note follows the standard note structure.
     
+-  The note uses the appropriate template for its note type.
+    
 -  Headings are organized logically.
     
 -  Examples are included where appropriate.
@@ -75,6 +77,8 @@ A note does not need to satisfy every item perfectly, but it should meet the maj
 -  Related notes are linked.
     
 -  Metadata and tags are complete if required.
+
+Use [[Templates/Knowledge-Note-Template]] for Knowledge Notes and [[Templates/Decision-Note-Template]] for Decision Notes.
     
 
 ---

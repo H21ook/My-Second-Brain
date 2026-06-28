@@ -233,6 +233,10 @@ Review notes periodically to:
 
 Knowledge is never considered "finished."
 
+For AI-assisted changes to permanent knowledge, follow [[06-AI-Working-Guide]] after review so impact analysis and update proposals are handled consistently.
+
+For system-wide documentation maintenance, use [[Operations/Knowledge-System-Audit]] to validate affected files and cross-links.
+
 ---
 
 # 8. Archive or Delete

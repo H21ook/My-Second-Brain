@@ -209,6 +209,8 @@ Every significant decision should answer:
 
 Future decisions should build upon previous decisions instead of restarting the thinking process.
 
+Use [[Templates/Decision-Note-Template]] when a decision is important enough to preserve.
+
 ---
 
 # Quality over Quantity

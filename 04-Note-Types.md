@@ -128,6 +128,8 @@ Examples
 
 These are the core of the Second Brain.
 
+Use [[Templates/Knowledge-Note-Template]] when creating a permanent Knowledge Note.
+
 ---
 
 # 4. Decision Note
@@ -159,6 +161,8 @@ Examples
     
 
 Decision notes prevent repeating the same discussions.
+
+Use [[Templates/Decision-Note-Template]] when recording an important decision.
 
 ---
 
@@ -232,6 +236,10 @@ Examples
     
 
 Templates save future time.
+
+AI workflow standards such as [[06-AI-Working-Guide]] are Template Notes because they provide reusable operating instructions.
+
+Operational procedures such as [[Operations/Knowledge-System-Audit]] are also Template Notes because they define repeatable workflows.
 
 ---
 

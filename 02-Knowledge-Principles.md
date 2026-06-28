@@ -168,6 +168,8 @@ A well-written note should allow future AI sessions to understand context with m
 
 Summaries, reusable templates, and structured notes are preferred over long conversations.
 
+AI-assisted knowledge work should follow [[06-AI-Working-Guide]] so context is synchronized across the vault.
+
 ---
 
 # 11. Prefer Decisions Over Discussions
@@ -177,6 +179,8 @@ Do not store long discussions.
 Store the final decision and why it was made.
 
 Include rejected alternatives only if they explain future trade-offs.
+
+Use [[Templates/Decision-Note-Template]] when a decision should be preserved for future reasoning.
 
 ---
 
