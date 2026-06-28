@@ -79,6 +79,8 @@ A note does not need to satisfy every item perfectly, but it should meet the maj
 -  Metadata and tags are complete if required.
 
 Use [[Templates/Knowledge-Note-Template]] for Knowledge Notes and [[Templates/Decision-Note-Template]] for Decision Notes.
+
+Use [[08-Metadata-Standards]] when adding or reviewing frontmatter, tags, aliases, status values, dates, or related-note metadata.
     
 
 ---

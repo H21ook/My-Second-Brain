@@ -36,6 +36,8 @@ Read and understand:
 - [[04-Note-Types]]
 - [[05-Knowledge-Quality-Checklist]]
 - [[06-AI-Working-Guide]]
+- [[07-Naming-Conventions]]
+- [[08-Metadata-Standards]]
 - all templates relevant to the task
 
 Do not begin making changes until the overall architecture is understood.
@@ -75,8 +77,8 @@ Determine whether the change affects:
 
 ## Standards
 
-- naming conventions
-- metadata standards
+- [[07-Naming-Conventions]]
+- [[08-Metadata-Standards]]
 
 ## Templates
 

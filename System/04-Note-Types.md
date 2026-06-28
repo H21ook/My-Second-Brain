@@ -241,6 +241,8 @@ AI workflow standards such as [[06-AI-Working-Guide]] are Template Notes because
 
 Operational procedures such as [[Operations/Knowledge-System-Audit]] are also Template Notes because they define repeatable workflows.
 
+Root standards such as [[07-Naming-Conventions]] define reusable rules that apply across note types.
+
 ---
 
 # 8. Resource Note

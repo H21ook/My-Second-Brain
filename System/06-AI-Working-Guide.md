@@ -29,6 +29,8 @@ At the beginning of every new session:
     - [[Templates/Knowledge-Note-Template]]
     - [[Templates/Decision-Note-Template]]
     - [[06-AI-Working-Guide]]
+    - [[07-Naming-Conventions]]
+    - [[08-Metadata-Standards]]
     - [[Operations/Knowledge-System-Audit]]
 
 4. Understand the overall knowledge architecture.
@@ -61,6 +63,8 @@ Always:
 - Follow [[02-Knowledge-Principles]].
 - Follow [[03-Knowledge-Lifecycle]].
 - Use the appropriate note type from [[04-Note-Types]].
+- Follow [[07-Naming-Conventions]] when creating, renaming, moving, or linking notes.
+- Follow [[08-Metadata-Standards]] when adding or changing properties, tags, aliases, statuses, dates, or relationship metadata.
 - Use the correct template.
 - Review important notes using [[05-Knowledge-Quality-Checklist]].
 
@@ -113,9 +117,14 @@ The analysis should consider:
 - Linked Notes
 - Project Documentation
 - Naming consistency
+- Metadata consistency
 - Existing references
 - Duplicate knowledge
 - Knowledge graph relationships
+
+Use [[07-Naming-Conventions]] when the impact analysis involves filenames, folder names, note titles, or wikilinks.
+
+Use [[08-Metadata-Standards]] when the impact analysis involves frontmatter, tags, aliases, status values, dates, or relationship fields.
 
 ---
 

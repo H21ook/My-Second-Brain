@@ -20,7 +20,7 @@ The goal is to build a durable thinking system that reduces repeated research, p
 
 ## Constitution Map
 
-The constitution is made of five core documents, one AI workflow guide, one operational procedure layer, and one template layer.
+The constitution is made of five core documents, one AI workflow guide, two standards, one operational procedure layer, and one template layer.
 
 | Order | Document | Role | Depends On | Used For |
 |---|---|---|---|---|
@@ -30,9 +30,11 @@ The constitution is made of five core documents, one AI workflow guide, one oper
 | 4 | [[04-Note-Types]] | Defines the purpose and lifetime of each note type. | [[02-Knowledge-Principles]], [[03-Knowledge-Lifecycle]] | Choosing where a note belongs. |
 | 5 | [[05-Knowledge-Quality-Checklist]] | Defines the review standard for permanent notes. | All previous documents | Checking whether a note is clear, reusable, and maintainable. |
 | 6 | [[06-AI-Working-Guide]] | Defines the operational workflow for AI assistants. | All previous documents | Performing impact analysis, update proposals, and approved maintenance. |
-| 7 | [[Operations/Knowledge-System-Audit]] | Defines the system-wide audit and synchronization process. | [[06-AI-Working-Guide]] | Auditing changes, finding affected documents, and validating consistency. |
-| 8 | [[Templates/Knowledge-Note-Template]] | Provides a standard structure for permanent Knowledge Notes. | [[02-Knowledge-Principles]], [[03-Knowledge-Lifecycle]], [[05-Knowledge-Quality-Checklist]] | Writing consistent long-term knowledge notes. |
-| 9 | [[Templates/Decision-Note-Template]] | Provides a standard structure for permanent Decision Notes. | [[01-Knowledge-Philosophy]], [[04-Note-Types]], [[06-AI-Working-Guide]] | Preserving decisions, reasoning, trade-offs, and reversal conditions. |
+| 7 | [[07-Naming-Conventions]] | Defines naming standards for notes, folders, templates, operations, and links. | [[04-Note-Types]], [[06-AI-Working-Guide]] | Creating stable names and preventing duplicate knowledge. |
+| 8 | [[08-Metadata-Standards]] | Defines metadata, frontmatter, tag, status, and relationship standards. | [[04-Note-Types]], [[07-Naming-Conventions]] | Keeping properties useful, searchable, and maintainable. |
+| 9 | [[Operations/Knowledge-System-Audit]] | Defines the system-wide audit and synchronization process. | [[06-AI-Working-Guide]], [[07-Naming-Conventions]], [[08-Metadata-Standards]] | Auditing changes, finding affected documents, and validating consistency. |
+| 10 | [[Templates/Knowledge-Note-Template]] | Provides a standard structure for permanent Knowledge Notes. | [[02-Knowledge-Principles]], [[03-Knowledge-Lifecycle]], [[05-Knowledge-Quality-Checklist]], [[08-Metadata-Standards]] | Writing consistent long-term knowledge notes. |
+| 11 | [[Templates/Decision-Note-Template]] | Provides a standard structure for permanent Decision Notes. | [[01-Knowledge-Philosophy]], [[04-Note-Types]], [[06-AI-Working-Guide]], [[08-Metadata-Standards]] | Preserving decisions, reasoning, trade-offs, and reversal conditions. |
 
 ---
 
@@ -46,9 +48,11 @@ Read the constitution in this order when working with this vault for the first t
 4. [[04-Note-Types]]
 5. [[05-Knowledge-Quality-Checklist]]
 6. [[06-AI-Working-Guide]]
-7. [[Operations/Knowledge-System-Audit]]
-8. [[Templates/Knowledge-Note-Template]]
-9. [[Templates/Decision-Note-Template]]
+7. [[07-Naming-Conventions]]
+8. [[08-Metadata-Standards]]
+9. [[Operations/Knowledge-System-Audit]]
+10. [[Templates/Knowledge-Note-Template]]
+11. [[Templates/Decision-Note-Template]]
 
 Each document narrows the previous one:
 
@@ -58,6 +62,8 @@ Each document narrows the previous one:
 - Note Types define where knowledge belongs.
 - Quality Checklist defines whether the note is good enough.
 - AI Working Guide defines how AI assistants should apply the system.
+- Naming Conventions define stable names for notes, folders, templates, operations, and links.
+- Metadata Standards define stable properties, tags, statuses, and relationships.
 - Operational procedures define repeatable system-wide maintenance workflows.
 - Templates turn the rules into repeatable writing structures.
 
@@ -138,6 +144,18 @@ Use it before treating an important note as long-term knowledge.
 [[06-AI-Working-Guide]] defines how AI assistants should work inside this vault.
 
 Use it before making structural changes, creating notes, changing templates, or updating permanent knowledge.
+
+### Naming Conventions control names and links
+
+[[07-Naming-Conventions]] defines how files, folders, templates, operations, notes, and wikilinks should be named.
+
+Use it before creating, renaming, moving, or reorganizing notes.
+
+### Metadata Standards control properties
+
+[[08-Metadata-Standards]] defines how Obsidian properties, frontmatter, tags, aliases, statuses, dates, and relationship fields should be used.
+
+Use it before adding or changing note metadata.
 
 ### Operations control system maintenance
 

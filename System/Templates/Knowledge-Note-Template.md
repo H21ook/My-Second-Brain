@@ -39,6 +39,30 @@ The title should represent exactly one concept.
 
 ---
 
+# Metadata
+
+Use frontmatter when creating the actual note.
+
+Example:
+
+```yaml
+---
+title:
+type: knowledge
+status: draft
+created:
+updated:
+tags:
+  - knowledge
+aliases:
+related:
+---
+```
+
+Follow [[08-Metadata-Standards]] when adding or changing metadata.
+
+---
+
 # Summary
 
 Provide a short overview.

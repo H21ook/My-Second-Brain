@@ -40,6 +40,33 @@ Examples:
 
 ---
 
+# Metadata
+
+Use frontmatter when creating the actual note.
+
+Example:
+
+```yaml
+---
+title:
+type: decision
+status: proposed
+created:
+updated:
+decision_date:
+tags:
+  - decision
+aliases:
+related:
+supersedes:
+superseded_by:
+---
+```
+
+Follow [[08-Metadata-Standards]] when adding or changing metadata.
+
+---
+
 # Decision
 
 State the final decision in one or two clear sentences.
