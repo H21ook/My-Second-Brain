@@ -34,28 +34,28 @@ AI instructions are located in:
 
 ## Structure
 
+```text
 MY-SECOND-BRAIN/
-
 README.md
 
 System/
-│
-├── 00-Overview.md
-├── 01-Knowledge-Philosophy.md
-├── 02-Knowledge-Principles.md
-├── 03-Knowledge-Lifecycle.md
-├── 04-Note-Types.md
-├── 05-Knowledge-Quality-Checklist.md
-├── 06-AI-Working-Guide.md
-├── 07-Naming-Conventions.md
-├── 08-Metadata-Standards.md
-│
-├── Templates/
-│   ├── Knowledge-Note-Template.md
-│   └── Decision-Note-Template.md
-│
-└── Operations/
-    └── Knowledge-System-Audit.md
+|-- 00-Overview.md
+|-- 01-Knowledge-Philosophy.md
+|-- 02-Knowledge-Principles.md
+|-- 03-Knowledge-Lifecycle.md
+|-- 04-Note-Types.md
+|-- 05-Knowledge-Quality-Checklist.md
+|-- 06-AI-Working-Guide.md
+|-- 07-Naming-Conventions.md
+|-- 08-Metadata-Standards.md
+|-- Standards/
+|   |-- Knowledge-Taxonomy.md
+|   `-- Vault-Structure.md
+|-- Templates/
+|   |-- Knowledge-Note-Template.md
+|   `-- Decision-Note-Template.md
+`-- Operations/
+    `-- Knowledge-System-Audit.md
 
 Knowledge/
 Projects/
@@ -67,3 +67,4 @@ Archive/
 .agents/
 .obsidian/
 .gitignore
+```

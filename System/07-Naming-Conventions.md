@@ -113,6 +113,7 @@ Rules:
 Current standard folders:
 
 ```text
+Standards/
 Templates/
 Operations/
 ```
@@ -121,6 +122,7 @@ Folder purpose:
 
 | Folder | Purpose |
 |---|---|
+| `Standards/` | Reusable rules for classification, organization, and system-wide consistency. |
 | `Templates/` | Reusable note structures and writing formats. |
 | `Operations/` | Repeatable workflows for maintaining the knowledge system. |
 
@@ -388,6 +390,8 @@ Before creating or renaming a note, AI assistants should:
 - read [[00-Overview]]
 - follow [[02-Knowledge-Principles]]
 - choose the correct note type from [[04-Note-Types]]
+- choose domains using [[Standards/Knowledge-Taxonomy]]
+- choose folder placement using [[Standards/Vault-Structure]]
 - use the correct template
 - search for duplicates
 - prefer improving existing notes over creating new ones

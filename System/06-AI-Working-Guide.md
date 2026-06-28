@@ -31,6 +31,8 @@ At the beginning of every new session:
     - [[06-AI-Working-Guide]]
     - [[07-Naming-Conventions]]
     - [[08-Metadata-Standards]]
+    - [[Standards/Knowledge-Taxonomy]]
+    - [[Standards/Vault-Structure]]
     - [[Operations/Knowledge-System-Audit]]
 
 4. Understand the overall knowledge architecture.
@@ -63,6 +65,8 @@ Always:
 - Follow [[02-Knowledge-Principles]].
 - Follow [[03-Knowledge-Lifecycle]].
 - Use the appropriate note type from [[04-Note-Types]].
+- Follow [[Standards/Knowledge-Taxonomy]] when choosing domains and cross-domain classification.
+- Follow [[Standards/Vault-Structure]] when choosing storage folders.
 - Follow [[07-Naming-Conventions]] when creating, renaming, moving, or linking notes.
 - Follow [[08-Metadata-Standards]] when adding or changing properties, tags, aliases, statuses, dates, or relationship metadata.
 - Use the correct template.
@@ -81,11 +85,14 @@ When multiple solutions exist:
 Before creating a new note, the AI should:
 
 1. Search for existing notes covering the same topic.
-2. Decide whether to:
+2. Choose the correct note type using [[04-Note-Types]].
+3. Choose the correct domain using [[Standards/Knowledge-Taxonomy]].
+4. Choose the correct storage folder using [[Standards/Vault-Structure]].
+5. Decide whether to:
     - improve an existing note,
     - merge multiple notes,
     - or create a new note.
-3. Avoid duplicate knowledge whenever possible.
+6. Avoid duplicate knowledge whenever possible.
 
 Creating a new note should be the last option if existing knowledge can be improved instead.
 
@@ -126,6 +133,10 @@ Use [[07-Naming-Conventions]] when the impact analysis involves filenames, folde
 
 Use [[08-Metadata-Standards]] when the impact analysis involves frontmatter, tags, aliases, status values, dates, or relationship fields.
 
+Use [[Standards/Knowledge-Taxonomy]] when the impact analysis involves domains, project knowledge, general knowledge, or cross-domain classification.
+
+Use [[Standards/Vault-Structure]] when the impact analysis involves top-level folders, storage location, lifecycle placement, or new folder proposals.
+
 ---
 
 # Update Proposal
@@ -163,6 +174,8 @@ Understand
   -> Analyze
   -> Search Existing Knowledge
   -> Choose Note Type
+  -> Choose Domain
+  -> Choose Vault Folder
   -> Choose Template
   -> Create Draft
   -> Review Quality
