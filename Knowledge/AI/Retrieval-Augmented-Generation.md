@@ -3,7 +3,7 @@ title: Retrieval-Augmented Generation
 type: knowledge
 status: active
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-06-30
 tags:
   - knowledge
   - ai
@@ -17,6 +17,7 @@ related:
   - "[[Prompt-Engineering-Principles]]"
   - "[[Knowledge-Distillation]]"
   - "[[Atomic-Knowledge]]"
+  - "[[Karpathy-LLM-Wiki-Reference]]"
 ---
 
 # Retrieval-Augmented Generation
@@ -316,6 +317,7 @@ This reduces token usage while improving response quality.
 - [[Prompt-Engineering-Principles|Prompt Engineering Principles]]
 - [[Knowledge-Distillation|Knowledge Distillation]]
 - [[Atomic-Knowledge|Atomic Knowledge]]
+- [[Karpathy-LLM-Wiki-Reference|Karpathy LLM Wiki Reference]]
 
 ---
 
@@ -326,6 +328,7 @@ This reduces token usage while improving response quality.
 - Anthropic documentation
 - LangChain documentation
 - LlamaIndex documentation
+- [[Karpathy-LLM-Wiki-Reference|Karpathy LLM Wiki Reference]]
 
 ---
 

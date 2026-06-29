@@ -10,6 +10,9 @@ tags:
   - codex
   - ai-workflow
 source_path: "D:/own/obsidian-vaults/Codex-Workspace-Guide/00-AI-WORKSPACE-SETUP.md"
+related:
+  - "[[AI-Agent-Tool-Candidates]]"
+  - "[[Codex-Skills-and-Knowledge]]"
 ---
 
 # AI Workspace Setup Guide
@@ -27,6 +30,13 @@ source_path: "D:/own/obsidian-vaults/Codex-Workspace-Guide/00-AI-WORKSPACE-SETUP
 - MCP Servers
 - VSCode Extensions
 - AI Knowledge Base
+
+---
+
+# Related Notes
+
+- [[AI-Agent-Tool-Candidates|AI Agent Tool Candidates]]
+- [[Codex-Skills-and-Knowledge|Codex Skills & Knowledge System]]
 
 ---
 

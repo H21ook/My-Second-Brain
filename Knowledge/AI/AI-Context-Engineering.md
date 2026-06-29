@@ -3,7 +3,7 @@ title: AI Context Engineering
 type: knowledge
 status: active
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-06-30
 tags:
   - knowledge
   - ai
@@ -18,6 +18,8 @@ related:
   - "[[Knowledge-Distillation]]"
   - "[[Atomic-Knowledge]]"
   - "[[06-AI-Working-Guide]]"
+  - "[[Karpathy-LLM-Wiki-Reference]]"
+  - "[[AI-Agent-Tool-Candidates]]"
 ---
 
 # AI Context Engineering
@@ -245,6 +247,8 @@ The AI receives less information but significantly more useful context.
 - [[Knowledge-Distillation|Knowledge Distillation]]
 - [[Atomic-Knowledge|Atomic Knowledge]]
 - [[06-AI-Working-Guide|AI Working Guide]]
+- [[Karpathy-LLM-Wiki-Reference|Karpathy LLM Wiki Reference]]
+- [[AI-Agent-Tool-Candidates|AI Agent Tool Candidates]]
 
 ---
 
@@ -254,6 +258,7 @@ The AI receives less information but significantly more useful context.
 - OpenAI, prompt engineering guidance
 - Retrieval-Augmented Generation, Lewis et al. 2020
 - Building effective AI systems
+- [[Karpathy-LLM-Wiki-Reference|Karpathy LLM Wiki Reference]]
 
 ---
 

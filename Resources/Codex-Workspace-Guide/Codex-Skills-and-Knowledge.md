@@ -10,6 +10,9 @@ tags:
   - codex
   - ai-workflow
 source_path: "D:/own/obsidian-vaults/Codex-Workspace-Guide/01-CODEX-SKILLS-AND-KNOWLEDGE.md"
+related:
+  - "[[AI-Agent-Tool-Candidates]]"
+  - "[[AI-Workspace-Setup]]"
 ---
 
 # Codex Skills & Knowledge System
@@ -182,3 +185,10 @@ knowledge/
 Purpose:
 
 Long-term memory for projects.
+
+---
+
+# Related Notes
+
+- [[AI-Agent-Tool-Candidates|AI Agent Tool Candidates]]
+- [[AI-Workspace-Setup|AI Workspace Setup Guide]]
