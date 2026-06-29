@@ -1,0 +1,789 @@
+---
+title: "Next.js App Router Docs Map"
+type: resource
+status: draft
+created: 2026-06-30
+updated: 2026-06-30
+tags:
+  - resource
+  - nextjs
+  - app-router
+  - documentation
+  - imported
+source_path: "D:/own/dusal/node_modules/next/dist/docs"
+source_url: "https://github.com/vercel/next.js/tree/canary/docs"
+---
+# Next.js App Router Docs Map
+
+Source: local next@16.2.6 documentation.
+GitHub source: https://github.com/vercel/next.js/tree/canary/docs
+
+Use this as a reference map. Do not treat every source page as permanent knowledge.
+
+Total docs: 251
+
+## Api Reference
+
+- **Directives** - Directives are used to modify the behavior of your Next.js application.
+  - Local: 01-app/03-api-reference/01-directives/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/01-directives/index.mdx
+- **use cache: private** - Learn how to use the "use cache: private" directive to cache functions that access runtime request APIs.
+  - Local: 01-app/03-api-reference/01-directives/use-cache-private.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/01-directives/use-cache-private.mdx
+- **use cache: remote** - Learn how to use the "use cache: remote" directive for persistent, shared caching using remote cache handlers.
+  - Local: 01-app/03-api-reference/01-directives/use-cache-remote.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/01-directives/use-cache-remote.mdx
+- **use cache** - Learn how to use the "use cache" directive to cache data in your Next.js application.
+  - Local: 01-app/03-api-reference/01-directives/use-cache.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/01-directives/use-cache.mdx
+- **use client** - Learn how to use the use client directive to render a component on the client.
+  - Local: 01-app/03-api-reference/01-directives/use-client.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/01-directives/use-client.mdx
+- **use server** - Learn how to use the use server directive to execute code on the server.
+  - Local: 01-app/03-api-reference/01-directives/use-server.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/01-directives/use-server.mdx
+- **Font Module** - Optimizing loading web fonts with the built-in `next/font` loaders.
+  - Local: 01-app/03-api-reference/02-components/font.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/02-components/font.mdx
+- **Form Component** - Learn how to use the `<Form>` component to handle form submissions and search params updates with client-side navigation.
+  - Local: 01-app/03-api-reference/02-components/form.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/02-components/form.mdx
+- **Image Component** - Optimize Images in your Next.js Application using the built-in `next/image` Component.
+  - Local: 01-app/03-api-reference/02-components/image.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/02-components/image.mdx
+- **Components** - API Reference for Next.js built-in components.
+  - Local: 01-app/03-api-reference/02-components/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/02-components/index.mdx
+- **Link Component** - Enable fast client-side navigation with the built-in `next/link` component.
+  - Local: 01-app/03-api-reference/02-components/link.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/02-components/link.mdx
+- **Script Component** - Optimize third-party scripts in your Next.js application using the built-in `next/script` Component.
+  - Local: 01-app/03-api-reference/02-components/script.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/02-components/script.mdx
+- **favicon, icon, and apple-icon** - API Reference for the Favicon, Icon and Apple Icon file conventions.
+  - Local: 01-app/03-api-reference/03-file-conventions/01-metadata/app-icons.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/01-metadata/app-icons.mdx
+- **Metadata Files API Reference** - API documentation for the metadata file conventions.
+  - Local: 01-app/03-api-reference/03-file-conventions/01-metadata/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/01-metadata/index.mdx
+- **manifest.json** - API Reference for manifest.json file.
+  - Local: 01-app/03-api-reference/03-file-conventions/01-metadata/manifest.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/01-metadata/manifest.mdx
+- **opengraph-image and twitter-image** - API Reference for the Open Graph Image and Twitter Image file conventions.
+  - Local: 01-app/03-api-reference/03-file-conventions/01-metadata/opengraph-image.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/01-metadata/opengraph-image.mdx
+- **robots.txt** - API Reference for robots.txt file.
+  - Local: 01-app/03-api-reference/03-file-conventions/01-metadata/robots.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/01-metadata/robots.mdx
+- **sitemap.xml** - API Reference for the sitemap.xml file.
+  - Local: 01-app/03-api-reference/03-file-conventions/01-metadata/sitemap.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/01-metadata/sitemap.mdx
+- **dynamicParams** - API reference for the dynamicParams route segment config option.
+  - Local: 01-app/03-api-reference/03-file-conventions/02-route-segment-config/dynamicParams.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/02-route-segment-config/dynamicParams.mdx
+- **Route Segment Config** - Learn about how to configure options for Next.js route segments.
+  - Local: 01-app/03-api-reference/03-file-conventions/02-route-segment-config/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/02-route-segment-config/index.mdx
+- **instant** - API reference for the instant route segment config.
+  - Local: 01-app/03-api-reference/03-file-conventions/02-route-segment-config/instant.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/02-route-segment-config/instant.mdx
+- **maxDuration** - API reference for the maxDuration route segment config option.
+  - Local: 01-app/03-api-reference/03-file-conventions/02-route-segment-config/maxDuration.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/02-route-segment-config/maxDuration.mdx
+- **preferredRegion** - API reference for the preferredRegion route segment config option.
+  - Local: 01-app/03-api-reference/03-file-conventions/02-route-segment-config/preferredRegion.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/02-route-segment-config/preferredRegion.mdx
+- **runtime** - API reference for the runtime route segment config option.
+  - Local: 01-app/03-api-reference/03-file-conventions/02-route-segment-config/runtime.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/02-route-segment-config/runtime.mdx
+- **default.js** - API Reference for the default.js file.
+  - Local: 01-app/03-api-reference/03-file-conventions/default.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/default.mdx
+- **Dynamic Route Segments** - Dynamic Route Segments can be used to programmatically generate route segments from dynamic data.
+  - Local: 01-app/03-api-reference/03-file-conventions/dynamic-routes.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/dynamic-routes.mdx
+- **error.js** - API reference for the error.js special file.
+  - Local: 01-app/03-api-reference/03-file-conventions/error.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/error.mdx
+- **forbidden.js** - API reference for the forbidden.js special file.
+  - Local: 01-app/03-api-reference/03-file-conventions/forbidden.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/forbidden.mdx
+- **File-system conventions** - API Reference for Next.js file-system conventions.
+  - Local: 01-app/03-api-reference/03-file-conventions/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/index.mdx
+- **instrumentation-client.js** - Learn how to add client-side instrumentation to track and monitor your Next.js application's frontend performance.
+  - Local: 01-app/03-api-reference/03-file-conventions/instrumentation-client.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/instrumentation-client.mdx
+- **instrumentation.js** - API reference for the instrumentation.js file.
+  - Local: 01-app/03-api-reference/03-file-conventions/instrumentation.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/instrumentation.mdx
+- **Intercepting Routes** - Use intercepting routes to load a new route within the current layout while masking the browser URL, useful for advanced routing patterns such as modals.
+  - Local: 01-app/03-api-reference/03-file-conventions/intercepting-routes.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/intercepting-routes.mdx
+- **layout.js** - API reference for the layout.js file.
+  - Local: 01-app/03-api-reference/03-file-conventions/layout.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/layout.mdx
+- **loading.js** - API reference for the loading.js file.
+  - Local: 01-app/03-api-reference/03-file-conventions/loading.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/loading.mdx
+- **mdx-components.js** - API reference for the mdx-components.js file.
+  - Local: 01-app/03-api-reference/03-file-conventions/mdx-components.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/mdx-components.mdx
+- **not-found.js** - API reference for the not-found.js file.
+  - Local: 01-app/03-api-reference/03-file-conventions/not-found.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/not-found.mdx
+- **page.js** - API reference for the page.js file.
+  - Local: 01-app/03-api-reference/03-file-conventions/page.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/page.mdx
+- **Parallel Routes** - Simultaneously render one or more pages in the same view that can be navigated independently. A pattern for highly dynamic applications.
+  - Local: 01-app/03-api-reference/03-file-conventions/parallel-routes.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/parallel-routes.mdx
+- **proxy.js** - API reference for the proxy.js file.
+  - Local: 01-app/03-api-reference/03-file-conventions/proxy.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/proxy.mdx
+- **public Folder** - Next.js allows you to serve static files, like images, in the public directory. You can learn how it works here.
+  - Local: 01-app/03-api-reference/03-file-conventions/public-folder.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/public-folder.mdx
+- **Route Groups** - Route Groups can be used to partition your Next.js application into different sections.
+  - Local: 01-app/03-api-reference/03-file-conventions/route-groups.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/route-groups.mdx
+- **route.js** - API reference for the route.js special file.
+  - Local: 01-app/03-api-reference/03-file-conventions/route.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/route.mdx
+- **src Folder** - Save pages under the `src` folder as an alternative to the root `pages` directory.
+  - Local: 01-app/03-api-reference/03-file-conventions/src-folder.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/src-folder.mdx
+- **template.js** - API Reference for the template.js file.
+  - Local: 01-app/03-api-reference/03-file-conventions/template.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/template.mdx
+- **unauthorized.js** - API reference for the unauthorized.js special file.
+  - Local: 01-app/03-api-reference/03-file-conventions/unauthorized.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/03-file-conventions/unauthorized.mdx
+- **after** - API Reference for the after function.
+  - Local: 01-app/03-api-reference/04-functions/after.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/after.mdx
+- **cacheLife** - Learn how to use the cacheLife function to set the cache expiration time for a cached function or component.
+  - Local: 01-app/03-api-reference/04-functions/cacheLife.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/cacheLife.mdx
+- **cacheTag** - Learn how to use the cacheTag function to manage cache invalidation in your Next.js application.
+  - Local: 01-app/03-api-reference/04-functions/cacheTag.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/cacheTag.mdx
+- **unstable_catchError** - API Reference for the unstable_catchError function.
+  - Local: 01-app/03-api-reference/04-functions/catchError.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/catchError.mdx
+- **connection** - API Reference for the connection function.
+  - Local: 01-app/03-api-reference/04-functions/connection.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/connection.mdx
+- **cookies** - API Reference for the cookies function.
+  - Local: 01-app/03-api-reference/04-functions/cookies.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/cookies.mdx
+- **draftMode** - API Reference for the draftMode function.
+  - Local: 01-app/03-api-reference/04-functions/draft-mode.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/draft-mode.mdx
+- **fetch** - API reference for the extended fetch function.
+  - Local: 01-app/03-api-reference/04-functions/fetch.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/fetch.mdx
+- **forbidden** - API Reference for the forbidden function.
+  - Local: 01-app/03-api-reference/04-functions/forbidden.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/forbidden.mdx
+- **generateImageMetadata** - Learn how to generate multiple images in a single Metadata API special file.
+  - Local: 01-app/03-api-reference/04-functions/generate-image-metadata.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/generate-image-metadata.mdx
+- **generateMetadata** - Learn how to add Metadata to your Next.js application for improved search engine optimization (SEO) and web shareability.
+  - Local: 01-app/03-api-reference/04-functions/generate-metadata.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/generate-metadata.mdx
+- **generateSitemaps** - Learn how to use the generateSiteMaps function to create multiple sitemaps for your application.
+  - Local: 01-app/03-api-reference/04-functions/generate-sitemaps.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/generate-sitemaps.mdx
+- **generateStaticParams** - API reference for the generateStaticParams function.
+  - Local: 01-app/03-api-reference/04-functions/generate-static-params.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/generate-static-params.mdx
+- **generateViewport** - API Reference for the generateViewport function.
+  - Local: 01-app/03-api-reference/04-functions/generate-viewport.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/generate-viewport.mdx
+- **headers** - API reference for the headers function.
+  - Local: 01-app/03-api-reference/04-functions/headers.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/headers.mdx
+- **ImageResponse** - API Reference for the ImageResponse constructor.
+  - Local: 01-app/03-api-reference/04-functions/image-response.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/image-response.mdx
+- **Functions** - API Reference for Next.js Functions and Hooks.
+  - Local: 01-app/03-api-reference/04-functions/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/index.mdx
+- **NextRequest** - API Reference for NextRequest.
+  - Local: 01-app/03-api-reference/04-functions/next-request.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/next-request.mdx
+- **NextResponse** - API Reference for NextResponse.
+  - Local: 01-app/03-api-reference/04-functions/next-response.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/next-response.mdx
+- **notFound** - API Reference for the notFound function.
+  - Local: 01-app/03-api-reference/04-functions/not-found.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/not-found.mdx
+- **permanentRedirect** - API Reference for the permanentRedirect function.
+  - Local: 01-app/03-api-reference/04-functions/permanentRedirect.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/permanentRedirect.mdx
+- **redirect** - API Reference for the redirect function.
+  - Local: 01-app/03-api-reference/04-functions/redirect.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/redirect.mdx
+- **refresh** - API Reference for the refresh function.
+  - Local: 01-app/03-api-reference/04-functions/refresh.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/refresh.mdx
+- **revalidatePath** - API Reference for the revalidatePath function.
+  - Local: 01-app/03-api-reference/04-functions/revalidatePath.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/revalidatePath.mdx
+- **revalidateTag** - API Reference for the revalidateTag function.
+  - Local: 01-app/03-api-reference/04-functions/revalidateTag.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/revalidateTag.mdx
+- **unauthorized** - API Reference for the unauthorized function.
+  - Local: 01-app/03-api-reference/04-functions/unauthorized.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/unauthorized.mdx
+- **unstable_cache** - API Reference for the unstable_cache function.
+  - Local: 01-app/03-api-reference/04-functions/unstable_cache.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/unstable_cache.mdx
+- **unstable_noStore** - API Reference for the unstable_noStore function.
+  - Local: 01-app/03-api-reference/04-functions/unstable_noStore.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/unstable_noStore.mdx
+- **unstable_rethrow** - API Reference for the unstable_rethrow function.
+  - Local: 01-app/03-api-reference/04-functions/unstable_rethrow.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/unstable_rethrow.mdx
+- **updateTag** - API Reference for the updateTag function.
+  - Local: 01-app/03-api-reference/04-functions/updateTag.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/updateTag.mdx
+- **useLinkStatus** - API Reference for the useLinkStatus hook.
+  - Local: 01-app/03-api-reference/04-functions/use-link-status.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/use-link-status.mdx
+- **useParams** - API Reference for the useParams hook.
+  - Local: 01-app/03-api-reference/04-functions/use-params.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/use-params.mdx
+- **usePathname** - API Reference for the usePathname hook.
+  - Local: 01-app/03-api-reference/04-functions/use-pathname.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/use-pathname.mdx
+- **useReportWebVitals** - API Reference for the useReportWebVitals function.
+  - Local: 01-app/03-api-reference/04-functions/use-report-web-vitals.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/use-report-web-vitals.mdx
+- **useRouter** - API reference for the useRouter hook.
+  - Local: 01-app/03-api-reference/04-functions/use-router.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/use-router.mdx
+- **useSearchParams** - API Reference for the useSearchParams hook.
+  - Local: 01-app/03-api-reference/04-functions/use-search-params.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/use-search-params.mdx
+- **useSelectedLayoutSegment** - API Reference for the useSelectedLayoutSegment hook.
+  - Local: 01-app/03-api-reference/04-functions/use-selected-layout-segment.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/use-selected-layout-segment.mdx
+- **useSelectedLayoutSegments** - API Reference for the useSelectedLayoutSegments hook.
+  - Local: 01-app/03-api-reference/04-functions/use-selected-layout-segments.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/use-selected-layout-segments.mdx
+- **userAgent** - The userAgent helper extends the Web Request API with additional properties and methods to interact with the user agent object from the request.
+  - Local: 01-app/03-api-reference/04-functions/userAgent.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/04-functions/userAgent.mdx
+- **adapterPath** - Configure a custom adapter for Next.js to hook into the build process.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/adapterPath.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/adapterPath.mdx
+- **allowedDevOrigins** - Use `allowedDevOrigins` to configure additional origins that can request the dev server.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/allowedDevOrigins.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/allowedDevOrigins.mdx
+- **appDir** - Enable the App Router to use layouts, streaming, and more.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/appDir.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/appDir.mdx
+- **assetPrefix** - Learn how to use the assetPrefix config option to configure your CDN.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/assetPrefix.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/assetPrefix.mdx
+- **authInterrupts** - Learn how to enable the experimental `authInterrupts` configuration option to use `forbidden` and `unauthorized`.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/authInterrupts.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/authInterrupts.mdx
+- **basePath** - Use `basePath` to deploy a Next.js application under a sub-path of a domain.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/basePath.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/basePath.mdx
+- **cacheComponents** - Learn how to enable the cacheComponents flag in Next.js.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/cacheComponents.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/cacheComponents.mdx
+- **cacheHandlers** - Configure custom cache handlers for use cache directives in Next.js.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/cacheHandlers.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/cacheHandlers.mdx
+- **cacheLife** - Learn how to set up cacheLife configurations in Next.js.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/cacheLife.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/cacheLife.mdx
+- **compress** - Next.js provides gzip compression to compress rendered content and static files, it only works with the server target. Learn more about it here.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/compress.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/compress.mdx
+- **crossOrigin** - Use the `crossOrigin` option to add a crossOrigin tag on the `script` tags generated by `next/script`.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/crossOrigin.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/crossOrigin.mdx
+- **cssChunking** - Use the `cssChunking` option to control how CSS files are chunked in your Next.js application.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/cssChunking.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/cssChunking.mdx
+- **deploymentId** - Configure a deployment identifier used for version skew protection and cache busting.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/deploymentId.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/deploymentId.mdx
+- **devIndicators** - Configuration options for the on-screen indicator that gives context about the current route you're viewing during development.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/devIndicators.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/devIndicators.mdx
+- **distDir** - Set a custom build directory to use instead of the default .next directory.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/distDir.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/distDir.mdx
+- **env** - Learn to add and access environment variables in your Next.js application at build time.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/env.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/env.mdx
+- **expireTime** - Customize stale-while-revalidate expire time for ISR enabled pages.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/expireTime.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/expireTime.mdx
+- **exportPathMap** - Customize the pages that will be exported as HTML files when using `next export`.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/exportPathMap.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/exportPathMap.mdx
+- **generateBuildId** - Configure the build id, which is used to identify the current build in which your application is being served.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/generateBuildId.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/generateBuildId.mdx
+- **generateEtags** - Next.js will generate etags for every page by default. Learn more about how to disable etag generation here.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/generateEtags.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/generateEtags.mdx
+- **headers** - Add custom HTTP headers to your Next.js app.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/headers.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/headers.mdx
+- **htmlLimitedBots** - Specify a list of user agents that should receive blocking metadata.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/htmlLimitedBots.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/htmlLimitedBots.mdx
+- **httpAgentOptions** - Next.js will automatically use HTTP Keep-Alive by default. Learn more about how to disable HTTP Keep-Alive here.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/httpAgentOptions.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/httpAgentOptions.mdx
+- **images** - Custom configuration for the next/image loader
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/images.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/images.mdx
+- **Custom Next.js Cache Handler** - Configure the Next.js cache used for storing and revalidating data to use any external service like Redis, Memcached, or others.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/incrementalCacheHandlerPath.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/incrementalCacheHandlerPath.mdx
+- **next.config.js** - Learn how to configure your application with next.config.js.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/index.mdx
+- **inlineCss** - Enable inline CSS support.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/inlineCss.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/inlineCss.mdx
+- **logging** - Configure logging behavior in the terminal when running Next.js in development mode, including fetch logging, incoming requests, and forwarding browser console logs to the terminal.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/logging.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/logging.mdx
+- **mdxRs** - Use the new Rust compiler to compile MDX files in the App Router.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/mdxRs.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/mdxRs.mdx
+- **onDemandEntries** - Configure how Next.js will dispose and keep in memory pages created in development.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/onDemandEntries.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/onDemandEntries.mdx
+- **optimizePackageImports** - API Reference for optimizePackageImports Next.js Config Option
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/optimizePackageImports.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/optimizePackageImports.mdx
+- **output** - Next.js automatically traces which files are needed by each page to allow for easy deployment of your application. Learn how it works here.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/output.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/output.mdx
+- **pageExtensions** - Extend the default page extensions used by Next.js when resolving pages in the Pages Router.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/pageExtensions.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/pageExtensions.mdx
+- **poweredByHeader** - Next.js will add the `x-powered-by` header by default. Learn to opt-out of it here.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/poweredByHeader.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/poweredByHeader.mdx
+- **productionBrowserSourceMaps** - Enables browser source map generation during the production build.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/productionBrowserSourceMaps.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/productionBrowserSourceMaps.mdx
+- **proxyClientMaxBodySize** - Configure the maximum request body size when using proxy.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/proxyClientMaxBodySize.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/proxyClientMaxBodySize.mdx
+- **reactCompiler** - Enable the React Compiler to automatically optimize component rendering.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/reactCompiler.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/reactCompiler.mdx
+- **reactMaxHeadersLength** - The maximum length of the headers that are emitted by React and added to the response.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/reactMaxHeadersLength.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/reactMaxHeadersLength.mdx
+- **reactStrictMode** - The complete Next.js runtime is now Strict Mode-compliant, learn how to opt-in
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/reactStrictMode.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/reactStrictMode.mdx
+- **redirects** - Add redirects to your Next.js app.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/redirects.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/redirects.mdx
+- **rewrites** - Add rewrites to your Next.js app.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/rewrites.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/rewrites.mdx
+- **sassOptions** - Configure Sass options.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/sassOptions.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/sassOptions.mdx
+- **serverActions** - Configure Server Actions behavior in your Next.js application.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/serverActions.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/serverActions.mdx
+- **serverComponentsHmrCache** - Configure whether fetch responses in Server Components are cached across HMR refresh requests.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/serverComponentsHmrCache.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/serverComponentsHmrCache.mdx
+- **serverExternalPackages** - Opt-out specific dependencies from the Server Components bundling and use native Node.js `require`.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/serverExternalPackages.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/serverExternalPackages.mdx
+- **staleTimes** - Learn how to override the invalidation time of the client cache.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/staleTimes.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/staleTimes.mdx
+- **staticGeneration*** - Learn how to configure static generation in your Next.js application.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/staticGeneration.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/staticGeneration.mdx
+- **taint** - Enable tainting Objects and Values.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/taint.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/taint.mdx
+- **trailingSlash** - Configure Next.js pages to resolve with or without a trailing slash.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/trailingSlash.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/trailingSlash.mdx
+- **transpilePackages** - Automatically transpile and bundle dependencies from local packages (like monorepos) or from external dependencies (`node_modules`).
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/transpilePackages.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/transpilePackages.mdx
+- **turbopack** - Configure Next.js with Turbopack-specific options
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/turbopack.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/turbopack.mdx
+- **Turbopack FileSystem Caching** - Learn how to enable FileSystem Caching for Turbopack builds
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/turbopackFileSystemCache.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/turbopackFileSystemCache.mdx
+- **turbopack.ignoreIssue** - Suppress specific Turbopack errors and warnings from the CLI output and error overlay.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/turbopackIgnoreIssue.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/turbopackIgnoreIssue.mdx
+- **typedRoutes** - Enable support for statically typed links.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/typedRoutes.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/typedRoutes.mdx
+- **typescript** - Configure how Next.js handles TypeScript errors during production builds and specify a custom tsconfig file.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/typescript.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/typescript.mdx
+- **urlImports** - Configure Next.js to allow importing modules from external URLs.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/urlImports.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/urlImports.mdx
+- **useLightningcss** - Enable experimental support for Lightning CSS.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/useLightningcss.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/useLightningcss.mdx
+- **viewTransition** - Enable ViewTransition API from React in App Router
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/viewTransition.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/viewTransition.mdx
+- **Custom Webpack Config** - Learn how to customize the webpack config used by Next.js
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/webpack.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/webpack.mdx
+- **webVitalsAttribution** - Learn how to use the webVitalsAttribution option to pinpoint the source of Web Vitals issues.
+  - Local: 01-app/03-api-reference/05-config/01-next-config-js/webVitalsAttribution.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/01-next-config-js/webVitalsAttribution.mdx
+- **TypeScript** - Next.js provides a TypeScript-first development experience for building your React application.
+  - Local: 01-app/03-api-reference/05-config/02-typescript.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/02-typescript.mdx
+- **ESLint Plugin** - Learn how to use and configure the ESLint plugin to catch common issues and problems in a Next.js application.
+  - Local: 01-app/03-api-reference/05-config/03-eslint.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/03-eslint.mdx
+- **Configuration** - Learn how to configure Next.js applications.
+  - Local: 01-app/03-api-reference/05-config/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/05-config/index.mdx
+- **create-next-app** - Create Next.js apps using one command with the create-next-app CLI.
+  - Local: 01-app/03-api-reference/06-cli/create-next-app.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/06-cli/create-next-app.mdx
+- **CLI** - API Reference for the Next.js Command Line Interface (CLI) tools.
+  - Local: 01-app/03-api-reference/06-cli/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/06-cli/index.mdx
+- **next CLI** - Learn how to run and build your application with the Next.js CLI.
+  - Local: 01-app/03-api-reference/06-cli/next.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/06-cli/next.mdx
+- **Configuration** - Configure `adapterPath` or `NEXT_ADAPTER_PATH` to use a custom deployment adapter.
+  - Local: 01-app/03-api-reference/07-adapters/01-configuration.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/07-adapters/01-configuration.mdx
+- **Creating an Adapter** - Create an adapter module that implements the `NextAdapter` interface.
+  - Local: 01-app/03-api-reference/07-adapters/02-creating-an-adapter.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/07-adapters/02-creating-an-adapter.mdx
+- **API Reference** - Reference for `modifyConfig` and `onBuildComplete` in the `NextAdapter` interface.
+  - Local: 01-app/03-api-reference/07-adapters/03-api-reference.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/07-adapters/03-api-reference.mdx
+- **Testing Adapters** - Validate adapters with the Next.js compatibility test harness and custom lifecycle scripts.
+  - Local: 01-app/03-api-reference/07-adapters/04-testing-adapters.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/07-adapters/04-testing-adapters.mdx
+- **Routing with @next/routing** - Use `@next/routing` to apply Next.js route matching behavior in adapters.
+  - Local: 01-app/03-api-reference/07-adapters/05-routing-with-next-routing.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/07-adapters/05-routing-with-next-routing.mdx
+- **Implementing PPR in an Adapter** - Implement Partial Prerendering support in an adapter using fallback output and cache hooks.
+  - Local: 01-app/03-api-reference/07-adapters/06-implementing-ppr-in-an-adapter.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/07-adapters/06-implementing-ppr-in-an-adapter.mdx
+- **Runtime Integration** - Understand how build-time adapters and runtime cache interfaces work together.
+  - Local: 01-app/03-api-reference/07-adapters/07-runtime-integration.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/07-adapters/07-runtime-integration.mdx
+- **Invoking Entrypoints** - Invoke Node.js and Edge build entrypoints with adapter runtime context.
+  - Local: 01-app/03-api-reference/07-adapters/08-invoking-entrypoints.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/07-adapters/08-invoking-entrypoints.mdx
+- **Output Types** - Reference for all build output types exposed to adapters.
+  - Local: 01-app/03-api-reference/07-adapters/09-output-types.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/07-adapters/09-output-types.mdx
+- **Routing Information** - Reference for routing phases and route fields exposed in `onBuildComplete`.
+  - Local: 01-app/03-api-reference/07-adapters/10-routing-information.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/07-adapters/10-routing-information.mdx
+- **Use Cases** - Common patterns and examples for deployment adapter implementations.
+  - Local: 01-app/03-api-reference/07-adapters/11-use-cases.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/07-adapters/11-use-cases.mdx
+- **Adapters** - Build deployment adapters for Next.js platforms and infrastructure.
+  - Local: 01-app/03-api-reference/07-adapters/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/07-adapters/index.mdx
+- **Edge Runtime** - API Reference for the Edge Runtime.
+  - Local: 01-app/03-api-reference/07-edge.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/07-edge.mdx
+- **Turbopack** - Turbopack is an incremental bundler optimized for JavaScript and TypeScript, written in Rust, and built into Next.js.
+  - Local: 01-app/03-api-reference/08-turbopack.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/08-turbopack.mdx
+- **API Reference** - Next.js API Reference for the App Router.
+  - Local: 01-app/03-api-reference/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/03-api-reference/index.mdx
+
+## Getting Started
+
+- **Installation** - Learn how to create a new Next.js application with the `create-next-app` CLI, and set up TypeScript, ESLint, and Module Path Aliases.
+  - Local: 01-app/01-getting-started/01-installation.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/01-installation.mdx
+- **Project structure and organization** - Learn the folder and file conventions in Next.js, and how to organize your project.
+  - Local: 01-app/01-getting-started/02-project-structure.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/02-project-structure.mdx
+- **Layouts and Pages** - Learn how to create your first pages and layouts, and link between them with the Link component.
+  - Local: 01-app/01-getting-started/03-layouts-and-pages.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/03-layouts-and-pages.mdx
+- **Linking and Navigating** - Learn how the built-in navigation optimizations work, including prefetching, prerendering, and client-side navigation, and how to optimize navigation for dynamic routes and slow networks.
+  - Local: 01-app/01-getting-started/04-linking-and-navigating.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/04-linking-and-navigating.mdx
+- **Server and Client Components** - Learn how you can use React Server and Client Components to render parts of your application on the server or the client.
+  - Local: 01-app/01-getting-started/05-server-and-client-components.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/05-server-and-client-components.mdx
+- **Fetching Data** - Learn how to fetch data and stream content that depends on data.
+  - Local: 01-app/01-getting-started/06-fetching-data.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/06-fetching-data.mdx
+- **Mutating Data** - Learn how to mutate data using Server Functions and Server Actions in Next.js.
+  - Local: 01-app/01-getting-started/07-mutating-data.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/07-mutating-data.mdx
+- **Caching** - Learn how to cache data and UI in Next.js
+  - Local: 01-app/01-getting-started/08-caching.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/08-caching.mdx
+- **Revalidating** - Learn how to revalidate cached data using time-based and on-demand strategies.
+  - Local: 01-app/01-getting-started/09-revalidating.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/09-revalidating.mdx
+- **Error Handling** - Learn how to display expected errors and handle uncaught exceptions.
+  - Local: 01-app/01-getting-started/10-error-handling.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/10-error-handling.mdx
+- **CSS** - Learn about the different ways to add CSS to your application, including Tailwind CSS, CSS Modules, Global CSS, and more.
+  - Local: 01-app/01-getting-started/11-css.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/11-css.mdx
+- **Image Optimization** - Learn how to optimize images in Next.js
+  - Local: 01-app/01-getting-started/12-images.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/12-images.mdx
+- **Font Optimization** - Learn how to optimize fonts in Next.js
+  - Local: 01-app/01-getting-started/13-fonts.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/13-fonts.mdx
+- **Metadata and OG images** - Learn how to add metadata to your pages and create dynamic OG images.
+  - Local: 01-app/01-getting-started/14-metadata-and-og-images.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/14-metadata-and-og-images.mdx
+- **Route Handlers** - Learn how to use Route Handlers
+  - Local: 01-app/01-getting-started/15-route-handlers.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/15-route-handlers.mdx
+- **Proxy** - Learn how to use Proxy
+  - Local: 01-app/01-getting-started/16-proxy.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/16-proxy.mdx
+- **Deploying** - Learn how to deploy your Next.js application.
+  - Local: 01-app/01-getting-started/17-deploying.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/17-deploying.mdx
+- **Upgrading** - Learn how to upgrade your Next.js application to the latest version or canary.
+  - Local: 01-app/01-getting-started/18-upgrading.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/18-upgrading.mdx
+- **Getting Started** - Learn how to create full-stack web applications with the Next.js App Router.
+  - Local: 01-app/01-getting-started/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/01-getting-started/index.mdx
+
+## Guides
+
+- **How to set up your Next.js project for AI coding agents** - Learn how to configure your Next.js project so AI coding agents use up-to-date documentation instead of outdated training data.
+  - Local: 01-app/02-guides/ai-agents.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/ai-agents.mdx
+- **How to add analytics to your Next.js application** - Measure and track page performance using Next.js Speed Insights
+  - Local: 01-app/02-guides/analytics.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/analytics.mdx
+- **How to implement authentication in Next.js** - Learn how to implement authentication in your Next.js application.
+  - Local: 01-app/02-guides/authentication.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/authentication.mdx
+- **How to use Next.js as a backend for your frontend** - Learn how to use Next.js as a backend framework
+  - Local: 01-app/02-guides/backend-for-frontend.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/backend-for-frontend.mdx
+- **Caching and Revalidating (Previous Model)** - Learn how to cache and revalidate data using fetch options, unstable_cache, and route segment configs for projects not using Cache Components.
+  - Local: 01-app/02-guides/caching-without-cache-components.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/caching-without-cache-components.mdx
+- **Using a CDN with Next.js** - Learn how CDN caching works with Next.js, including what works today, cache variability, and the direction toward pathname-based cache keying.
+  - Local: 01-app/02-guides/cdn-caching.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/cdn-caching.mdx
+- **How to configure Continuous Integration (CI) build caching** - Learn how to configure CI to cache Next.js builds
+  - Local: 01-app/02-guides/ci-build-caching.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/ci-build-caching.mdx
+- **How to set a Content Security Policy (CSP) for your Next.js application** - Learn how to set a Content Security Policy (CSP) for your Next.js application.
+  - Local: 01-app/02-guides/content-security-policy.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/content-security-policy.mdx
+- **How to use CSS-in-JS libraries** - Use CSS-in-JS libraries with Next.js
+  - Local: 01-app/02-guides/css-in-js.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/css-in-js.mdx
+- **How to set up a custom server in Next.js** - Start a Next.js app programmatically using a custom server.
+  - Local: 01-app/02-guides/custom-server.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/custom-server.mdx
+- **How to think about data security in Next.js** - Learn the built-in data security features in Next.js and learn best practices for protecting your application's data.
+  - Local: 01-app/02-guides/data-security.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/data-security.mdx
+- **How to use debugging tools with Next.js** - Learn how to debug your Next.js application with VS Code, Chrome DevTools, or Firefox DevTools.
+  - Local: 01-app/02-guides/debugging.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/debugging.mdx
+- **Deploying Next.js to different platforms** - Understand which Next.js features require specific platform capabilities and how to choose the right deployment target.
+  - Local: 01-app/02-guides/deploying-to-platforms.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/deploying-to-platforms.mdx
+- **How to preview content with Draft Mode in Next.js** - Next.js has draft mode to toggle between static and dynamic pages. You can learn how it works with App Router here.
+  - Local: 01-app/02-guides/draft-mode.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/draft-mode.mdx
+- **How to use environment variables in Next.js** - Learn to add and access environment variables in your Next.js application.
+  - Local: 01-app/02-guides/environment-variables.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/environment-variables.mdx
+- **How to create forms with Server Actions** - Learn how to create forms in Next.js with React Server Actions.
+  - Local: 01-app/02-guides/forms.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/forms.mdx
+- **How revalidation works in Next.js** - A deep dive into how Next.js revalidates cached content, including the tag system, cache consistency, and multi-instance coordination.
+  - Local: 01-app/02-guides/how-revalidation-works.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/how-revalidation-works.mdx
+- **How to implement Incremental Static Regeneration (ISR)** - Learn how to create or update static pages at runtime with Incremental Static Regeneration.
+  - Local: 01-app/02-guides/incremental-static-regeneration.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/incremental-static-regeneration.mdx
+- **Guides** - Learn how to implement common patterns and real-world use cases using Next.js
+  - Local: 01-app/02-guides/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/index.mdx
+- **Ensuring instant navigations** - Learn how to structure your app to prefetch and prerender more content, providing instant page loads and client navigations.
+  - Local: 01-app/02-guides/instant-navigation.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/instant-navigation.mdx
+- **How to set up instrumentation** - Learn how to use instrumentation to run code at server startup in your Next.js app
+  - Local: 01-app/02-guides/instrumentation.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/instrumentation.mdx
+- **Internationalization** - Add support for multiple languages with internationalized routing and localized content.
+  - Local: 01-app/02-guides/internationalization.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/internationalization.mdx
+- **How to implement JSON-LD in your Next.js application** - Learn how to add JSON-LD to your Next.js application to describe your content to search engines and AI.
+  - Local: 01-app/02-guides/json-ld.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/json-ld.mdx
+- **How to lazy load Client Components and libraries** - Lazy load imported libraries and React Components to improve your application's loading performance.
+  - Local: 01-app/02-guides/lazy-loading.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/lazy-loading.mdx
+- **How to optimize your local development environment** - Learn how to optimize your local development environment with Next.js.
+  - Local: 01-app/02-guides/local-development.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/local-development.mdx
+- **Enabling Next.js MCP Server for Coding Agents** - Learn how to use Next.js MCP support to allow coding agents access to your application state
+  - Local: 01-app/02-guides/mcp.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/mcp.mdx
+- **How to use markdown and MDX in Next.js** - Learn how to configure MDX and use it in your Next.js apps.
+  - Local: 01-app/02-guides/mdx.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/mdx.mdx
+- **How to optimize memory usage** - Optimize memory used by your application in development and production.
+  - Local: 01-app/02-guides/memory-usage.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/memory-usage.mdx
+- **Migrating to Cache Components** - Learn how to migrate from route segment configs to Cache Components in Next.js.
+  - Local: 01-app/02-guides/migrating-to-cache-components.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/migrating-to-cache-components.mdx
+- **How to migrate from Pages to the App Router** - Learn how to upgrade your existing Next.js application from the Pages Router to the App Router.
+  - Local: 01-app/02-guides/migrating/app-router-migration.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/migrating/app-router-migration.mdx
+- **How to migrate from Create React App to Next.js** - Learn how to migrate your existing React application from Create React App to Next.js.
+  - Local: 01-app/02-guides/migrating/from-create-react-app.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/migrating/from-create-react-app.mdx
+- **How to migrate from Vite to Next.js** - Learn how to migrate your existing React application from Vite to Next.js.
+  - Local: 01-app/02-guides/migrating/from-vite.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/migrating/from-vite.mdx
+- **Migrating** - Learn how to migrate from popular frameworks to Next.js
+  - Local: 01-app/02-guides/migrating/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/migrating/index.mdx
+- **How to build multi-tenant apps in Next.js** - Learn how to build multi-tenant apps with the App Router.
+  - Local: 01-app/02-guides/multi-tenant.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/multi-tenant.mdx
+- **How to build micro-frontends using multi-zones and Next.js** - Learn how to build micro-frontends using Next.js Multi-Zones to deploy multiple Next.js apps under a single domain.
+  - Local: 01-app/02-guides/multi-zones.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/multi-zones.mdx
+- **How to set up instrumentation with OpenTelemetry** - Learn how to instrument your Next.js app with OpenTelemetry.
+  - Local: 01-app/02-guides/open-telemetry.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/open-telemetry.mdx
+- **Optimizing package bundling** - Learn how to analyze and optimize your application's server and client bundles with the Next.js Bundle Analyzer for Turbopack, and the `@next/bundle-analyzer` plugin for Webpack.
+  - Local: 01-app/02-guides/package-bundling.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/package-bundling.mdx
+- **Implementing Partial Prerendering on your platform** - A guide for platform engineers on implementing PPR support, from basic origin rendering to optimized CDN integration.
+  - Local: 01-app/02-guides/ppr-platform-guide.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/ppr-platform-guide.mdx
+- **Prefetching** - Learn how to configure prefetching in Next.js
+  - Local: 01-app/02-guides/prefetching.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/prefetching.mdx
+- **Preserving UI state across navigations** - Learn how to control which UI state is preserved and which resets when navigating between pages.
+  - Local: 01-app/02-guides/preserving-ui-state.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/preserving-ui-state.mdx
+- **How to optimize your Next.js application for production** - Recommendations to ensure the best performance and user experience before taking your Next.js application to production.
+  - Local: 01-app/02-guides/production-checklist.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/production-checklist.mdx
+- **How to build a Progressive Web Application (PWA) with Next.js** - Learn how to build a Progressive Web Application (PWA) with Next.js.
+  - Local: 01-app/02-guides/progressive-web-apps.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/progressive-web-apps.mdx
+- **Building public pages** - Learn how to build public, "static" pages that share data across users, such as landing pages, list pages (products, blogs, etc.), marketing and news sites.
+  - Local: 01-app/02-guides/public-static-pages.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/public-static-pages.mdx
+- **How to handle redirects in Next.js** - Learn the different ways to handle redirects in Next.js.
+  - Local: 01-app/02-guides/redirecting.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/redirecting.mdx
+- **Next.js Rendering Philosophy** - Learn how Next.js treats static and dynamic rendering as a spectrum at the component level, and what this means for deployment.
+  - Local: 01-app/02-guides/rendering-philosophy.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/rendering-philosophy.mdx
+- **How to use Sass** - Style your Next.js application using Sass.
+  - Local: 01-app/02-guides/sass.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/sass.mdx
+- **How to load and optimize scripts** - Optimize 3rd party scripts with the built-in Script component.
+  - Local: 01-app/02-guides/scripts.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/scripts.mdx
+- **How to self-host your Next.js application** - Learn how to self-host your Next.js application on a Node.js server, Docker image, or static HTML files (static exports).
+  - Local: 01-app/02-guides/self-hosting.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/self-hosting.mdx
+- **How to build single-page applications with Next.js** - Next.js fully supports building Single-Page Applications (SPAs).
+  - Local: 01-app/02-guides/single-page-applications.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/single-page-applications.mdx
+- **How to create a static export of your Next.js application** - Next.js enables starting as a static site or Single-Page Application (SPA), then later optionally upgrading to use features that require a server.
+  - Local: 01-app/02-guides/static-exports.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/static-exports.mdx
+- **Streaming** - Learn how streaming works in Next.js and how to use it to progressively render UI as data becomes available.
+  - Local: 01-app/02-guides/streaming.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/streaming.mdx
+- **How to install Tailwind CSS v3 in your Next.js application** - Style your Next.js Application using Tailwind CSS v3 for broader browser support.
+  - Local: 01-app/02-guides/tailwind-v3-css.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/tailwind-v3-css.mdx
+- **How to set up Cypress with Next.js** - Learn how to set up Cypress with Next.js for End-to-End (E2E) and Component Testing.
+  - Local: 01-app/02-guides/testing/cypress.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/testing/cypress.mdx
+- **Testing** - Learn how to set up Next.js with four commonly used testing tools — Cypress, Playwright, Vitest, and Jest.
+  - Local: 01-app/02-guides/testing/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/testing/index.mdx
+- **How to set up Jest with Next.js** - Learn how to set up Jest with Next.js for Unit Testing and Snapshot Testing.
+  - Local: 01-app/02-guides/testing/jest.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/testing/jest.mdx
+- **How to set up Playwright with Next.js** - Learn how to set up Playwright with Next.js for End-to-End (E2E) Testing.
+  - Local: 01-app/02-guides/testing/playwright.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/testing/playwright.mdx
+- **How to set up Vitest with Next.js** - Learn how to set up Vitest with Next.js for Unit Testing.
+  - Local: 01-app/02-guides/testing/vitest.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/testing/vitest.mdx
+- **How to optimize third-party libraries** - Optimize the performance of third-party libraries in your application with the `@next/third-parties` package.
+  - Local: 01-app/02-guides/third-party-libraries.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/third-party-libraries.mdx
+- **Codemods** - Use codemods to upgrade your Next.js codebase when new features are released.
+  - Local: 01-app/02-guides/upgrading/codemods.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/upgrading/codemods.mdx
+- **Upgrade Guides** - Learn how to upgrade to the latest versions of Next.js.
+  - Local: 01-app/02-guides/upgrading/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/upgrading/index.mdx
+- **How to upgrade to version 14** - Upgrade your Next.js Application from Version 13 to 14.
+  - Local: 01-app/02-guides/upgrading/version-14.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/upgrading/version-14.mdx
+- **How to upgrade to version 15** - Upgrade your Next.js Application from Version 14 to 15.
+  - Local: 01-app/02-guides/upgrading/version-15.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/upgrading/version-15.mdx
+- **How to upgrade to version 16** - Upgrade your Next.js Application from Version 15 to 16.
+  - Local: 01-app/02-guides/upgrading/version-16.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/upgrading/version-16.mdx
+- **How to use and optimize videos** - Recommendations and best practices for optimizing videos in your Next.js application.
+  - Local: 01-app/02-guides/videos.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/videos.mdx
+- **Designing view transitions** - Learn how to use view transitions to communicate meaning during navigation, loading, and content changes in a Next.js app.
+  - Local: 01-app/02-guides/view-transitions.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/02-guides/view-transitions.mdx
+
+## Overview
+
+- **Next.js Glossary** - A glossary of common terms used in Next.js.
+  - Local: 01-app/04-glossary.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/04-glossary.mdx
+- **App Router** - The App Router is a file-system based router that uses React's latest features such as Server Components, Suspense, Server Functions, and more.
+  - Local: 01-app/index.md
+  - GitHub: https://github.com/vercel/next.js/tree/canary/docs/01-app/index.mdx
+
