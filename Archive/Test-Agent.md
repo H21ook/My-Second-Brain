@@ -34,6 +34,7 @@ Start with:
 - `Projects/E-Geree-v3/E-Geree-v3-Networking-BFF.md`
 - `Projects/E-Geree-v3/E-Geree-v3-RHF-Migration-Plan.md`
 - the latest `Projects/E-Geree-v3/E-Geree-v3-Worklog-YYYY-MM-DD.md`
+- `Projects/E-Geree-v3/E-Geree-v3-[Task-Name]-Plan.md`
 
 Choose only the notes relevant to the current task. Do not load the entire vault unless the user asks for a broader audit.
 
