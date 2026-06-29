@@ -98,6 +98,34 @@ Creating a new note should be the last option if existing knowledge can be impro
 
 ---
 
+# Inbox Processing Workflow
+
+When processing `Inbox/`, the AI should treat each item as temporary input that must either become useful knowledge, move to the correct working location, or be removed.
+
+```text
+Inbox item
+    ↓
+Evaluate future value
+    ├─ No future value → Delete
+    └─ Has future value
+          ↓
+      Existing note?
+          ├─ Yes → Update existing note
+          ├─ No + reusable → Create appropriate Knowledge note
+          ├─ No + source-based → Move or summarize into Resources
+          └─ Project-specific → Move to Projects
+          ↓
+      Link related notes
+          ↓
+      Update metadata
+          ↓
+      Remove from Inbox
+```
+
+Use [[03-Knowledge-Lifecycle]], [[04-Note-Types]], [[08-Metadata-Standards]], and [[Standards/Vault-Structure]] when making Inbox processing decisions.
+
+---
+
 # Impact Analysis (Required)
 
 Whenever the AI:
