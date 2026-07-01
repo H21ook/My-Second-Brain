@@ -3,7 +3,7 @@ title: "Plan: createType-aware wizard behavior"
 type: project
 status: draft
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-07-01
 tags:
   - project
   - imported
@@ -51,7 +51,7 @@ Wizard бүх `createType`-д яг адилхан ажилладаг. Дараа
 - [x] **`lib/create-type-helpers.ts`** (шинэ) — `isTemplateFlow(ct)` helper
 - [x] **`api/queries.ts`** — `submitStrategies`-д TEMPLATE + LINKED_TEMPLATE нэмсэн
 - [x] **`lib/payload.ts`** — `linkedTemplateId` + `contractEventId` conditional нэмсэн
-- [x] **`lib/validation-steps.ts`** — `validateParticipant` + `validateFields` template-д relaxed
+- [x] **`lib/validation-steps.ts`** — `validateParticipant` + `validateFields` template-д relaxed. ⚠️ **Superseded (2026-06-30):** энэ файл RHF шилжилтээр устгагдсан — логик одоо `schema/index.ts` → `makeParticipantsSchema`/Zod дотор (`isTemplate`-aware). Дэлгэрэнгүй: [[E-Geree-v3-Contract-Create-RHF-Plan]].
 - [x] **`components/steps/participant/SectionBasic.tsx`** — `disableLegalEntity` prop нэмсэн
 - [x] **`components/steps/participant/SectionContact.tsx`** — `locked` + `orgLocked` props нэмсэн
 - [x] **`components/steps/participant/ParticipantCard.tsx`** — `selectMeta` уншиж lock props дамжуулсан
@@ -109,9 +109,9 @@ Card сонгоход:
 
 ## Гол дизайн шийдвэрүүд
 
-**`isTemplateFlow` хаана ашиглагдсан:**
+**`isTemplateFlow` хаана ашиглагдсан** (⚠️ жагсаалт бичигдсэн үеийн snapshot; RHF шилжилтийн дараа `validation-steps.ts` → `schema/index.ts` болсон):
 ```
-lib/validation-steps.ts       → validateParticipant, validateFields
+lib/validation-steps.ts       → validateParticipant, validateFields   [DELETED, 2026-06-30 → schema/index.ts]
 lib/payload.ts                → linkedTemplateId/contractEventId conditional
 participant/ParticipantCard.tsx → senderLocked, senderOrgLocked
 steps/ParticipantStep.tsx     → canAdd button
@@ -136,3 +136,18 @@ const senderOrgLocked = isSender && isTemplate   // загвар: org locked, а
 const fullyLocked   = locked || (orgLocked && !isOrg)  // иргэн илгээгч загварт = locked
 const orgInfoLocked = orgLocked && isOrg               // org илгээгч загварт = regNum locked only
 ```
+
+---
+
+## 2026-07-01 үргэлжлэл — Fields/Submit алхмын parity
+
+Дээрх план "Дууссан" гэж тэмдэглэсэн байсан ч **Fields алхам загварт validation-гүй** байсан нь илэрсэн (`FieldsStep`-ийн gate `isTemplateFlow`-д шууд `true` буцаадаг байлаа → Continue шалгуургүй дарагддаг). Мөн Submit алхмын UI/copy/route бүгд гэрээний хувилбар л байсан. Дараах засварууд:
+
+- [x] **`FieldsStep.tsx`** — template bypass хассан; `checkRequiredFields` одоо загварт ч гэрээтэй адил ажиллана (`lib/fields.ts`).
+- [x] **`payload.ts`** — `contractType`: `TEMPLATE` → `SENT` (өмнө нь `content.config.contractType`-ээс авдаг байсан).
+- [x] **`StepHeader.tsx`** — wizard гарчиг `createType`-с хамаарна (`wizardTitle*` i18n keys, 4 хувилбар).
+- [x] **`SubmitStep.tsx`** — Сэндэр fill sidebar: header үлдэж, дотор нь загварт `templateNoPrefill` тайлбар (form-ын оронд). Баталгаажуулах Dialog copy (`confirmCreateTemplate*`) + action товч `tActions("yes")` бүх тохиолдолд. Амжилтын toast (`createTemplateSuccess`/`saveTemplateSuccess`) + redirect (`/documents/template` vs `/documents/sent`) createType-с хамаарна.
+- [x] **`src/app/[locale]/.../documents/template/page.tsx`** (шинэ) — placeholder route, redirect-ийн зорилтот хуудас амжилттай resolve хийхийн тулд.
+- [x] **`CreateDocumentDialog.tsx`** — карт дараалал: Хувийн гэрээ → Загвар → Нээлттэй баримт → Холбоост загвар (хамгийн доор). Доод 2 (Нээлттэй баримт, Холбоост загвар) `@todo re-enable` тэмдэглэлтэй түр disabled.
+
+Branch: `feat/profile-dropdown-recent` (профайл feature-тэй хамт нэг branch дээр — тусдаа биш).
