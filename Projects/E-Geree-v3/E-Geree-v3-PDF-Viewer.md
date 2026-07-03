@@ -3,7 +3,7 @@ title: "07 — PDF Viewer"
 type: project
 status: draft
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-07-03
 tags:
   - project
   - imported
@@ -43,6 +43,26 @@ source_path: "D:/own/obsidian-vaults/E-Geree-v3-docs/07-PDF-Viewer.md"
 ## Utils (`utils/`)
 - `pdfjs-loader.ts` — pdfjs worker ачаалах
 - `pdf-field-utils.ts` — талбар координат тооцоо
+- `pdf-url.ts` — `resolvePdfUrl()`: CDN/cross-origin PDF URL-ийг same-origin proxy
+  (`/pdf-api`, `/temporary`) зам руу хөрвүүлнэ (CORS). Анх `contract-create/lib`-д
+  байсныг 2026-07-03 shared руу зөөсөн (2 feature ашигладаг болсон), `index.ts`-ээс
+  export хийнэ.
+
+## Хэрэглэгчид (consumers)
+| Feature | Файл | Горим |
+|---|---|---|
+| contract-create | `FieldsStep.tsx` | `isEdit` талбар байрлуулах/чирэх |
+| contract-create | `SubmitStep.tsx`, `PdfUploadField.tsx` | View-only (fields харуулах, edit-гүй) |
+| documents (detail) | `ViewerPlaceholder.tsx` → `ContractDetail.tsx` | View-only + LIVE fields (local хуулбар, `FieldFillPanel`-аар засварлагдана), `signedPdfUrl \|\| generatedPdfUrl \|\| relatedPdfUrl` эх сурвалжаар (viewer: `e928bc5`; display: `43db7df` 2d-2a; fill: `b4ece39` 2d-2b). `isEdit`/`PdfEditConfig` хэрэггүй болсон — [[E-Geree-v3-Contract-Detail-Page-Phase2d-Plan]] 2d-2b. **Layout (`9e6409b`):** 2-col hero (`lg:grid-cols-[1fr_380px]`), `ViewerPlaceholder` `h-[60vh] lg:h-full`; баруун rail дотор PDF preview, `FlowActionDock` доор docked. |
+
+## Талбар бөглөх UI (`src/shared/field-fill/`)
+`SenderFillSection` — per-type value input widget (text/date/number/select/
+signature-apply/image-upload). Анх `contract-create/components/steps/submit/`-д
+байсныг 2026-07-03 энд зөөв (`boundaries/element-types` eslint дүрэм feature→
+feature импортыг index.ts-ээр ч зөвшөөрдөггүй тул). `contract-create/SubmitStep.tsx`
+(илгээгч, илгээхээс өмнө) болон `documents/FieldFillPanel.tsx` (хүлээн авагч,
+SIGN_PENDING) хоёулаа хэрэглэнэ. Гарын үсэг зурах тусдаа UI хэрэггүй —
+`auth.user.signatureImgUrl`-г шууд `value`-д apply хийдэг.
 
 ## Талбар сонголтын animation (`FieldsEditOverlay`)
 - **Бүдгэрэлт** — талбар сонгогдсон үед (`selectedFieldId`) сонгосноос бусад нь
