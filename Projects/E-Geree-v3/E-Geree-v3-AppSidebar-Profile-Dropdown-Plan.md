@@ -1,11 +1,17 @@
 ---
 title: AppSidebar Profile Dropdown — Design
-status: approved, not implemented
+status: done
 date: 2026-07-01
 tags: [plan, design, e-geree-v3, app-sidebar, profile]
 ---
 
 # AppSidebar Profile Dropdown — Design
+
+> [!warning] Аудит 2026-07-07 (Claude) — дутуу зүйлс
+> **Ерөнхий төлөв:** mostly-done (9/10 хэрэгжсэн)
+> **Дутуу / хийгдээгүй:**
+> - ⚪ Manual UI check (browser walkthrough) — plan line 69 "Not yet manually clicked through in browser — do that before merging" хэвээр атал бүх commit dev-khishigee дээр merged; 4 зүйлт checklist (recent list шинэчлэл, section хил, dialog search, F1 shortcut)-ийг бүрэн гүйцэтгэсэн бичлэг worklog-уудад алга. Хэсэгчилсэн эсрэг баримт: a4095d8-д dialog-ийг browser дээр дарж bug засcан, 07-07 worklog-д live profile switch хийсэн. Functional эрсдэл бага (unit test 4/4 PASS).
+> **Тэмдэглэл:** Бүх код талын ажил (useRecentProfiles, buildProfileSections, AllProfilesDialog, dropdown дахин бичилт, userId threading) хэрэгжиж dev-khishigee-д merged, unit test 4/4 PASS. Frontmatter-ийн "approved, not implemented" status хуучирсан тул "implemented/merged" болгож засах, мөн manual UI checklist-ийг нэг удаа бүрэн гүйлгэх эсэхийг шийдэх нь зүйтэй.
 
 ## Context
 - File: `src/components/layout/app-sidebar.tsx`

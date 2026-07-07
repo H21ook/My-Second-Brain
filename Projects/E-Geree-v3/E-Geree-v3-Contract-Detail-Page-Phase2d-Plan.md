@@ -1,9 +1,9 @@
 ---
 title: "Plan: Contract Detail Page — Phase 2d (signing + 2FA + digital signature)"
 type: project
-status: draft
+status: in-progress
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-07
 tags:
   - project
   - project/e-geree-v3
@@ -12,10 +12,20 @@ tags:
 
 # Plan: Contract Detail Page — Phase 2d (гарын үсэг + 2FA + тоон гарын үсэг)
 
+> [!warning] Аудит 2026-07-07 (Claude) — дутуу зүйлс
+> **Ерөнхий төлөв:** mostly-done (13/18 хэрэгжсэн)
+> **Дутуу / хийгдээгүй:**
+> - 🟡 GSIGN live runtime-verify — DIGITAL_SIGNATURE_PENDING гэрээ + DAN push утас шаардана; static+build code-confidence л хүрсэн (plan мөр 155, 187-194; Worklog-2026-07-07 "NOT browser-drive-verified")
+> - 🟡 TRIDUM live runtime-verify — гэрээ + суусан ws://127.0.0.1:59001 desktop клиент шаардана; a710337 unit test-тэй ч жинхэнэ WS клиент тестийн тэмдэглэл алга (plan мөр 169)
+> - 🟡 Payment live runtime-verify — paymentType:PAY + paymentStatus:PENDING гэрээ + QPay/банк sandbox шаардана; ff09d0b static verify PASS л гэсэн (plan мөр 193)
+> - ⚪ Deploy/ops: prod-д DIGITAL_SIGNATURE_URL, NEXT_PUBLIC_DIGITAL_SIGNATURE_SOCKET_URL, PAYMENT_URL_V2 env inject батлагдаагүй — эдгээр var repo-ийн ямар ч CI/Dockerfile-д алга (plan мөр 157 "Үлдэц = ops, код биш")
+> - ⚪ npm run test:e2e (critical-flows) 2d фазуудад ажилласан нотолгоо алга — playwright-report/test-results mtime 2026-06-30, эхний 2d commit-оос өмнөх
+> **Тэмдэглэл:** Кодын бүх ажил дууссан — 10 commit бүгд dev-khishigee дээр батлагдав (2d-1…2d-4, OTP live-verify PASS); үлдсэн нь live runtime-verify + ops. Frontmatter status: draft хэвээр байгаа нь агуулгатайгаа зөрчилдөж байгаа тул шинэчлэх нь зүйтэй.
+
 **Огноо:** 2026-07-03
 **Салбар:** dev-khishigee
 **Төлөв:** 📝 Ноорог (батлагдаагүй)
-**Холбоотой:** [[E-Geree-v3-Contract-Detail-Page-Phase2a-Plan]] · [[E-Geree-v3-Contract-Detail-Page-Phase2c-Plan]] · [[pdf-viewer-new]] · [[E-Geree-v3-Networking-BFF]]
+**Холбоотой:** [[E-Geree-v3-Contract-Detail]] (2a plan устгагдсан) · [[E-Geree-v3-Contract-Detail-Page-Phase2c-Plan]] · [[E-Geree-v3-PDF-Viewer]] · [[E-Geree-v3-Networking-BFF]]
 
 ---
 
@@ -215,7 +225,7 @@ GSIGN, TRIDUM, Payment гурвуулаа **static+build code-confidence** тө�
 | OTP input | `input-otp` (Phase 1 password modal) | `features/documents/components/PasswordChangeModal.tsx` |
 | Dialog | shadcn `dialog.tsx` (2c FeedbackModal) | `components/ui/dialog.tsx` |
 | ActionButtons placeholder prop-ууд | `ActionButtons.tsx` (2c) — onDelete/onResend/onAcceptCancellation/onSign/... | `features/documents/components/detail/ActionButtons.tsx` |
-| PDF viewer | [[pdf-viewer-new]] | `shared/pdf-viewer` |
+| PDF viewer | [[E-Geree-v3-PDF-Viewer]] | `shared/pdf-viewer` |
 
 ---
 

@@ -29,7 +29,6 @@ before contributing or modifying permanent knowledge.
 
 AI instructions are located in:
 
-- .agents/
 - System/
 
 ## Structure
@@ -64,7 +63,6 @@ Inbox/
 Daily/
 Archive/
 
-.agents/
 .obsidian/
 .gitignore
 ```

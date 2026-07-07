@@ -35,3 +35,23 @@ Continuation of [[E-Geree-v3-Contract-Detail-Page-Phase2d-Plan]]. Earlier today:
 **Verification:** `npx tsc --noEmit` 0 errors · `npm run lint` 0 errors (4 pre-existing warnings in unrelated files) · `npx vitest run` 28/28. **Not verified in-browser** — needs an authenticated session against a real SIGN_PENDING/REVIEW_PENDING contract, which wasn't available this session (same limitation noted in the previous worklog entries for this plan).
 
 **Next:** user explicitly deferred 2d-3 (digital signature) and 2d-4 (payment) — "do them much later, just note it for now." Plan doc updated to reflect this (both marked ⏸️ deferred, not active). No further Phase2d work planned until user resumes it; when resumed, do a manual browser QA pass on 2d-2c's OTP flow first (untested), then continue from 2d-3.
+
+## Profile migration — Phase A (shell)
+- Plan + discovery + Phase A done. See [[E-Geree-v3-Profile-Migration-Plan]].
+- New: `src/features/profile/` (nav config, ProfileNav tab nav, PersonalInformation placeholder) + routes `(with-sidebar)/profile/{layout,page,user/personal-information/page}.tsx`.
+- v2 nested profile sidebar → tab nav (approved decision). Deferred: settings/payment/api-connection pages, subscription header.
+- v3 locale files already had full `profileDropdown` namespace — no translation work.
+- Verified 2026-07-03: tsc PASS, eslint PASS, build PASS (pre-existing cn MISSING_MESSAGE warns in CreateDocumentDialog, untouched), vitest 28/28.
+
+## Profile migration — Phase B1 (personal-information)
+- Committed `63ed860` (18 files, +1,345). Sonnet subagent built; Fable main thread reviewed all files + re-verified: tsc/eslint/build/vitest all PASS; scripted i18n audit 59 keys × 4 locales — none missing.
+- New BFF: `auth-v2` catch-all proxy + static multipart route for user-image upload.
+- v2 payload corrections: verify-mobile `{mobileNumber,countryCode}`, confirm `{code}`.
+- v2 oversize-upload bug intentionally NOT reproduced (5MB now blocks).
+- B2 items pending approval: email change/merge, DAN socket linking, stamp create modal, verification header.
+
+## Profile migration — Phase B2 (email connect/change/merge)
+- Committed `d8450b9` (8 files, +513). Implemented inline (auth-critical).
+- Key discovery: v2 rotates session (new access token + profile cookie) after email confirm/merge → v3 needs static BFF routes with cookie-setting (`_shared/rotate-session.ts`); generic proxy can't touch httpOnly cookies. Token stripped from browser response.
+- Verified: tsc/eslint/build/vitest PASS; routes emitted; zero i18n additions needed.
+- Manual smoke pending: real email + merge round-trips, session continuity.

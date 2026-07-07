@@ -1,9 +1,9 @@
 ---
 title: "07 — PDF Viewer"
 type: project
-status: draft
+status: active
 created: 2026-06-30
-updated: 2026-07-03
+updated: 2026-07-07
 tags:
   - project
   - imported
@@ -53,7 +53,7 @@ source_path: "D:/own/obsidian-vaults/E-Geree-v3-docs/07-PDF-Viewer.md"
 |---|---|---|
 | contract-create | `FieldsStep.tsx` | `isEdit` талбар байрлуулах/чирэх |
 | contract-create | `SubmitStep.tsx`, `PdfUploadField.tsx` | View-only (fields харуулах, edit-гүй) |
-| documents (detail) | `ViewerPlaceholder.tsx` → `ContractDetail.tsx` | View-only + LIVE fields (local хуулбар, `FieldFillPanel`-аар засварлагдана), `signedPdfUrl \|\| generatedPdfUrl \|\| relatedPdfUrl` эх сурвалжаар (viewer: `e928bc5`; display: `43db7df` 2d-2a; fill: `b4ece39` 2d-2b). `isEdit`/`PdfEditConfig` хэрэггүй болсон — [[E-Geree-v3-Contract-Detail-Page-Phase2d-Plan]] 2d-2b. **Layout (`9e6409b`):** 2-col hero (`lg:grid-cols-[1fr_380px]`), `ViewerPlaceholder` `h-[60vh] lg:h-full`; баруун rail дотор PDF preview, `FlowActionDock` доор docked. |
+| documents (detail) | `ViewerPlaceholder.tsx` → `ContractDetail.tsx` | View-only + LIVE fields (local хуулбар, `FieldFillPanel`-аар засварлагдана), `signedPdfUrl \|\| generatedPdfUrl \|\| relatedPdfUrl` эх сурвалжаар (viewer: `e928bc5`; display: `43db7df` 2d-2a; fill: `b4ece39` 2d-2b). `isEdit`/`PdfEditConfig` хэрэггүй болсон — [[E-Geree-v3-Contract-Detail-Page-Phase2d-Plan]] 2d-2b. **Layout (`9e6409b`, дараа нь `c2c07e5`):** 2-col hero (`lg:grid-cols-[1fr_380px]`, `ContractDetail.tsx:279`), PDF = зүүн hero (`ViewerPlaceholder` `h-[60vh] lg:h-full`); баруун rail (Бөглөх/Мэдээлэл tabs) доор `ActionButtons` sticky rail-footer dock. `FlowActionDock` компонент устгагдсан (`c2c07e5`) — `ActionButtons.tsx`-д нэгтгэгдсэн: яг нэг primary товч (`getFlowAction` resolver, `lib/action-status.ts`) + бусад үйлдэл "⋯" overflow dropdown. Дэлгэрэнгүй: [[E-Geree-v3-Contract-Detail]]. |
 
 ## Талбар бөглөх UI (`src/shared/field-fill/`)
 `SenderFillSection` — per-type value input widget (text/date/number/select/

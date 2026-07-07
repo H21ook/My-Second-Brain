@@ -3,7 +3,7 @@ title: "E-Geree-v3"
 type: project
 status: draft
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-07-07
 tags:
   - project
   - imported
@@ -25,6 +25,10 @@ Next.js 16 + React 19 дээр суурилсан цахим гэрээ (e-contr
 5. [[E-Geree-v3-State-Management]] — Redux Toolkit store, slice-ууд
 6. [[E-Geree-v3-Networking-BFF]] — BFF давхарга, fetcher-ууд, proxy
 7. [[E-Geree-v3-PDF-Viewer]] — PDF үзэгч ба талбар (field) editor
+8. [[E-Geree-v3-EMongolia-Auth]] — e-Mongolia (DAN) auth архитектур, mobile хязгаарлалт
+9. [[E-Geree-v3-Contract-Detail]] — Гэрээний дэлгэрэнгүй хуудас (route, gate, action dock, sign/2FA/payment)
+10. [[E-Geree-v3-Label-Sidebar]] — Sidebar-ын хавтасны мод (NavLabels), label CRUD/sharing/DnD
+11. [[E-Geree-v3-Landing]] — Landing (`/`) хуудас: секцийн бүтэц, дизайн дүрэм, дата урсгал
 
 ## 🎯 Богино тайлбар
 E-Geree нь **гэрээг дижитал хэлбэрээр үүсгэх, талбар (гарын үсэг, огноо г.м.)

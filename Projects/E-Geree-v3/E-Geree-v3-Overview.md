@@ -1,9 +1,9 @@
 ---
 title: "01 — Төслийн тойм"
 type: project
-status: draft
+status: active
 created: 2026-06-30
-updated: 2026-06-30
+updated: 2026-07-07
 tags:
   - project
   - imported
@@ -33,12 +33,13 @@ PDF байршуулж, оролцогчдыг тодорхойлж, PDF дээ�
 | Олон хэл | next-intl (mn, en, kr, cn) |
 | PDF | pdfjs-dist v5 |
 | UI | shadcn/ui (Radix/base-ui + Tailwind) |
-| Тест | Playwright (E2E) |
+| Socket | socket.io-client `^4.8.3` — GSIGN тоон гарын үсгийн push (`features/documents/components/detail/DigitalSignModal.tsx`, upstream: `core/config/index.ts:52` `getDigitalSignatureUrl`, BFF: `app/backend/digital-signature/[...path]/route.ts`) |
+| Тест | Vitest `^4.1.9` (unit — 475 тест / 12 файл, 2026-07-07 байдлаар) + Playwright (E2E) |
 
 ## Дээд түвшний хавтас (src/)
 
 - `app/` — Next.js App Router (routes + BFF). [[E-Geree-v3-Routing]]
-- `features/` — Vertical slice feature-ууд: `contract-create/`, `documents/`. [[E-Geree-v3-Contract-Create-Feature]]
+- `features/` — Vertical slice feature-ууд: `contract-create/`, `documents/`, `profile/`. [[E-Geree-v3-Contract-Create-Feature]] · [[E-Geree-v3-Contract-Detail]] · [[E-Geree-v3-Profile-Migration-Plan]]
 - `core/` — Үндсэн дэд бүтэц: `http/` (fetcher), `config/`, `auth/`, `observability/`. [[E-Geree-v3-Networking-BFF]]
 - `shared/` — Дундын давхарга: `ui/components/`, `lib/`, `pdf-viewer/`. [[E-Geree-v3-PDF-Viewer]]
 - `components/` — UI: `ui/` (shadcn primitive), `custom/`, `layout/`, `auth/`
@@ -52,4 +53,4 @@ PDF байршуулж, оролцогчдыг тодорхойлж, PDF дээ�
 
 ## npm скрипт
 - `dev` — хөгжүүлэлт · `dev:e2e` — mock сервертэй · `build` / `start`
-- `lint` · `test:e2e` (Playwright)
+- `lint` · `knip` · `test` (Vitest) / `test:watch` · `test:e2e` (Playwright, мөн `:ui` / `:headed`)

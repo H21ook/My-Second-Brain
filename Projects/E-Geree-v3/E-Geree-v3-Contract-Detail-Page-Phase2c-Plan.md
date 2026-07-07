@@ -1,9 +1,9 @@
 ---
 title: "Plan: Contract Detail Page — Phase 2c (ActionButtons — гэрээний үйлдлүүд)"
 type: project
-status: draft
+status: in-progress
 created: 2026-07-03
-updated: 2026-07-03
+updated: 2026-07-07
 tags:
   - project
   - project/e-geree-v3
@@ -12,10 +12,17 @@ tags:
 
 # Plan: Contract Detail Page — Phase 2c (ActionButtons)
 
+> [!warning] Аудит 2026-07-07 (Claude) — дутуу зүйлс
+> **Ерөнхий төлөв:** mostly-done (9/11 хэрэгжсэн)
+> **Дутуу / хийгдээгүй:**
+> - 🟡 Verification алхам 2-4: browser/live шалгалт — 3 reason action (return/cancel-request/decline-cancellation), товчны enable/disable matrix, delete→confirm→жагсаалт урсгал — Worklog 2026-07-03 "Not verified in-browser"; 2d-ийн live session-ууд зөвхөн approve OTP + fill/signature-ийг хамарсан тул "backend prefix тулгах" өрийн payload/path батлагдаагүй хэвээр.
+> - ⚪ Verification алхам 7: `npm run test:e2e` (Playwright) ажиллуулсан бичлэг алга — test-results/.last-run.json 2026-06-30 (2c commit-оос өмнө), сүүлийн run улаан (5 тест унасан).
+> **Тэмдэглэл:** Бүх build ажил commit `7d4afe2`-т хийгдсэн (3 endpoint + 3 mutation hook, ActionButtons.tsx, FeedbackModal.tsx, ConfirmActionDialog; tsc/eslint/knip цэвэр); sign/pay placeholder-ууд 2d-д бодит болсон. Frontmatter `status: draft` хуучирсан — шинэчлэх, мөн 3 reason action-ы live шалгалт + e2e run хийхээр шийдэх хэрэгтэй.
+
 **Огноо:** 2026-07-03
 **Салбар:** dev-khishigee
 **Төлөв:** 📝 Ноорог (батлагдаагүй)
-**Холбоотой:** [[E-Geree-v3-Contract-Detail-Page-Phase2a-Plan]] · [[E-Geree-v3-Networking-BFF]] · [[E-Geree-v3-State-Management]]
+**Холбоотой:** [[E-Geree-v3-Contract-Detail]] (2a plan устгагдсан) · [[E-Geree-v3-Networking-BFF]] · [[E-Geree-v3-State-Management]]
 
 ---
 

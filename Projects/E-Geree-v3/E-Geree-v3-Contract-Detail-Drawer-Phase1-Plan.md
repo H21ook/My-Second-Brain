@@ -1,9 +1,9 @@
 ---
 title: "Plan: Contract Detail Drawer — Phase 1 (dropdown actions + rep modal + navigation)"
 type: project
-status: draft
+status: in-progress
 created: 2026-07-02
-updated: 2026-07-02
+updated: 2026-07-07
 tags:
   - project
   - project/e-geree-v3
@@ -11,6 +11,14 @@ tags:
 ---
 
 # Plan: Contract Detail Drawer — Phase 1
+
+> [!warning] Аудит 2026-07-07 (Claude) — дутуу зүйлс
+> **Ерөнхий төлөв:** mostly-done (10/12 хэрэгжсэн)
+> **Дутуу / хийгдээгүй:**
+> - ⚪ 1b-4: QR код модал — огт хэрэгжээгүй (`git log -S "QrModal"` 0 commit; dropdown-д QR item алга, ContractDetailDrawer.tsx:82-ийн comment хэвээр). Гэхдээ v3-т public contract урсгал байхгүй тул plan-ийн "алгасаж болно" нөхцөл хангагдсан.
+> - ⚪ "Устгах" ба "Нууц үг солих" dropdown item-ууд drawer-с хүрэх боломжгүй — ContractDetailDrawer.tsx:126-141-д санаатай comment-out (e8db0d3: "илгээгч талаас хийгддэг үйлдэл тул одоохондоо хаалттай"); PasswordChangeModal render хийгдсэн ч нээх reachable код алга, delete нь detail page-ийн ActionButtons.tsx:83-д тусдаа хэрэгжсэн.
+> - ⚪ (заавал биш) ReceivedContent.tsx:147-159-ийн inline useQuery-г useReceivedList hook болгож api модульд зөөгөөгүй (key factory бий, hook export алга).
+> **Тэмдэглэл:** Phase 1-ийн гол ажил бүгд 2026-07-02-нд хэрэгжсэн (commit 677338e, 96662e7, ca6f01e, 32ec40b) — 4 модал, documents API модуль, footer dropdown, goToDetail засвар бүгд repo-д бий. Frontmatter status: draft хуучирсан тул шинэчлэх, мөн goToDetail-ийн COMPLETED shortcut-ыг хассан санаатай зөрүүг баталгаажуулах эсэхээ шийдэх хэрэгтэй.
 
 **Огноо:** 2026-07-02  
 **Салбар:** dev-khishigee  

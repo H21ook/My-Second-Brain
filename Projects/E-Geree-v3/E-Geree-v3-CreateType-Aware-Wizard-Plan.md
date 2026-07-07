@@ -1,9 +1,9 @@
 ---
 title: "Plan: createType-aware wizard behavior"
 type: project
-status: draft
+status: in-progress
 created: 2026-06-30
-updated: 2026-07-01
+updated: 2026-07-07
 tags:
   - project
   - imported
@@ -12,6 +12,13 @@ source_path: "D:/own/obsidian-vaults/E-Geree-v3-docs/plans/createtype-aware-wiza
 ---
 
 # Plan: createType-aware wizard behavior
+
+> [!warning] Аудит 2026-07-07 (Claude) — дутуу зүйлс
+> **Ерөнхий төлөв:** mostly-done (21/24 хэрэгжсэн)
+> **Дутуу / хийгдээгүй:**
+> - 🟡 2026-07-01 үргэлжлэлийн i18n keys cn.json/kr.json-д алга (wizardTitleTemplate/wizardTitleLinkedTemplate/wizardTitlePublic, templateNoPrefill, confirmCreateTemplateTitle/Desc, createTemplateSuccess, saveTemplateSuccess) — 8 key бүгд mn/en-д бий, cn/kr-д 0; request.ts fallback-гүй тул cn/kr дээр MISSING_MESSAGE гарна (commit e514dc4 зөвхөн mn/en нэмсэн).
+> - ⚪ CreateDocumentDialog card тайлбарын sidebar namespace keys cn/kr-д дутуу (createDocumentDesc, privateContractDesc, templateDesc, openDocumentDesc, linkedTemplateDesc) — mn/en-д л бий; cn.json:1834-ийн linkedTemplateDesc нь devGuide namespace тул тооцогдохгүй, cn/kr дээр 5 Desc key MISSING_MESSAGE болно.
+> **Тэмдэглэл:** Гол логик (participant lock, relaxed validation, submit switch-case strategy, payload ялгаа, CreateDocumentDialog entry point) код түвшинд бүрэн баталгаажсан, tsc/build PASS. Дараагийн шийдвэр: cn/kr locale-уудыг нөхөх эсэх, мөн frontmatter status: draft-ыг бодит '✅ Дууссан' төлөвтэй нийцүүлэх.
 
 **Огноо:** 2026-06-29  
 **Салбар:** dev-khishigee  
@@ -51,7 +58,7 @@ Wizard бүх `createType`-д яг адилхан ажилладаг. Дараа
 - [x] **`lib/create-type-helpers.ts`** (шинэ) — `isTemplateFlow(ct)` helper
 - [x] **`api/queries.ts`** — `submitStrategies`-д TEMPLATE + LINKED_TEMPLATE нэмсэн
 - [x] **`lib/payload.ts`** — `linkedTemplateId` + `contractEventId` conditional нэмсэн
-- [x] **`lib/validation-steps.ts`** — `validateParticipant` + `validateFields` template-д relaxed. ⚠️ **Superseded (2026-06-30):** энэ файл RHF шилжилтээр устгагдсан — логик одоо `schema/index.ts` → `makeParticipantsSchema`/Zod дотор (`isTemplate`-aware). Дэлгэрэнгүй: [[E-Geree-v3-Contract-Create-RHF-Plan]].
+- [x] **`lib/validation-steps.ts`** — `validateParticipant` + `validateFields` template-д relaxed. ⚠️ **Superseded (2026-06-30):** энэ файл RHF шилжилтээр устгагдсан — логик одоо `schema/index.ts` → `makeParticipantsSchema`/Zod дотор (`isTemplate`-aware). Дэлгэрэнгүй: [[E-Geree-v3-Contract-Create-Feature]] (RHF plan устгагдсан 2026-07-07).
 - [x] **`components/steps/participant/SectionBasic.tsx`** — `disableLegalEntity` prop нэмсэн
 - [x] **`components/steps/participant/SectionContact.tsx`** — `locked` + `orgLocked` props нэмсэн
 - [x] **`components/steps/participant/ParticipantCard.tsx`** — `selectMeta` уншиж lock props дамжуулсан
