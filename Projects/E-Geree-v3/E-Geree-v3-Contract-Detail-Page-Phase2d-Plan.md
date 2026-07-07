@@ -42,7 +42,7 @@ Phase 2d = эдгээрийн **2FA/гарын үсгийн урсгалыг** �
 | **pdf-viewer талбар (fields prop) ашиглах** — `isEdit`/`edit` config дээр interactive fill | Sign flow-д `contractFieldList` бөглөхөд PDF талбарын drag/select UI хэрэгтэй | ⛔ 2d-2b-ийн хориг (view-only дууссан ч edit/drag хэсэг шинэ) |
 | `ContractDetailData.config.participantsConfig`, `contractFieldList` | taskVerified (DAN), sign payload, талбар display/fill | Type өргөтгөх шаардлагатай (2a-д хойшлуулсан) |
 | Хадгалсан гарын үсэг (profile signature) | signature-input сонголт | v2 `profile/user/signature` — v3-т байгаа эсэх тулга |
-| DAN verified flag (`authUser.danVerified`) | taskVerified | v3 auth/profile-д байгаа эсэх тулга |
+| DAN verified flag (`authUser.danVerified`) | taskVerified | ✅ ШИЙДЭГДСЭН (2026-07-07 audit): `taskVerified` нь `auth-types.ts:61` **dead type талбар** — documents feature-д огт ашиглагддаггүй. v3-т client-side sign-gate ОГТ БАЙХГҮЙ (`action-status.ts` зөвхөн `actionData.status`-аар gate хийнэ). Баталгаажуулалтыг **backend** хийдэг (`methods`/error). "2c hardcoded true" = stale, portлогдоогүй. Хийх зүйл алга. |
 
 **Дүгнэлт:** **2d-1 (verification modal)** ✅ дууссан. **pdf-viewer view-only wiring** ✅ дууссан → **2d-2a (талбар ДИСПЛЕЙ)** одоо нээлттэй, шууд эхэлж болно. **2d-2b (талбар ФИЛЛ/edit)**, **2d-2c (OTP submit)**, **2d-3 (digital)** дараалан хийнэ.
 
@@ -108,18 +108,49 @@ Phase 2d = эдгээрийн **2FA/гарын үсгийн урсгалыг** �
 - **i18n:** `security.*`/`actions.*` бүх шаардлагатай key (`verification`, `verificationDesc`, `retrySendCode`, `expireDate`, `emailVerificationCode` гэх мэт) v3 locale-д АЛЬ ХЭДИЙН байсан (v2-ээс бүтнээр хуулагдсан) — нэмэлт орчуулга хэрэггүй болсон.
 - **Хамрахгүй:** `signature-input` (гарын үсэг зурах UI) — энэ бол 2d-3 (digital signature)-ийн хамрах хүрээ, 2d-2c-д шаардлагагүй (SenderFillSection аль хэдийн `signatureImgUrl`-г 2d-2b-д preset хийсэн). Supplement file upload (v2 `successSend`-ийн participant1 salaa) мөн хамрагдаагүй — тусдаа асуудал биш тул YAGNI.
 - Verify: tsc 0, eslint 0 (шинэ файлууд цэвэр, 4 pre-existing warning өөр файлд), vitest 28/28.
-- **Үр дүн:** sign/review OTP хүртэл бүрэн ажиллана. Гар аргаар (browser) шалгагдаагүй — authenticated session + SIGN_PENDING/REVIEW_PENDING бодит гэрээ шаардана.
+- **Үр дүн:** sign/review OTP хүртэл бүрэн ажиллана.
 - **Дараагийн алхам:** 2d-3 (digital signature, g-sign/DAN) — 2d-2c-аас хамааралтай, одоо нээлттэй.
 
-### ⏸️ 2d-3: Digital signature (g-sign / DAN) — ХОЙШЛУУЛСАН (2026-07-03, хэрэглэгчийн шийдвэр)
-**Хэрэглэгч:** "2d-3, 2d-4 эдгээрийг бүүр дараа хийнэ. Тэр болтол тэмдэглээд орхичих." Доорх задаргаа зөвхөн тэмдэглэл — идэвхтэй ажил ЭХЛЭХГҮЙ хойшлуулаагүй хүртэл.
+**🔬 Browser-verify (2026-07-06, `dev-khishigee`, live prod backend `public-api.e-geree.mn` — staging алга):** `verify` skill-ээр гар аргаар жолоодов. Гэрээ `6a4b5dee…622d` ("Test", SIGN_PENDING, өөрийн 2 талт test).
+- ✅ `fieldsIncomplete` guard: талбар дутуу үед Approve дарахад **сүлжээ хүсэлт гарахгүй** (fill tab руу).
+- ✅ 2d-2b fill/signature preset: "Гарын үсэг зурах" → `signatureImgUrl` apply → PDF live preview.
+- ✅ `verify:false` payload ЯГ зөв: `POST /backend/public-api/v1/contract-action/approve` `{verify:false, participantKey:"participant2", contractRequestId, contractActionId, contractFieldList:[7 талбар]}`. Response handling (apiClient unwrap), `onSuccess` conditional-invalidate, detail refetch, PDF `temporary-contract→contract`, түүх "гарын үсэг зурсан", 2 оролцогч ✓ — БҮГД ажиллана. Гэрээ **SIGNED** боллоо.
+- ⚠️ **ГОЛ НЭЭЛТ — DAN нь OTP-г алгасдаг:** энэ хэрэглэгч `userVerifiedType:"DAN_VERIFIED"`. Backend `verify:false`-д **`methods` буцаадаггүй**, шууд SIGNED болгодог. Тиймээс `!data.methods` салаа шатдаг → `SecurityVerificationModal` **огт нээгддэггүй**. Өөрөөр хэлбэл 2d-2c-ийн ГОЛ (OTP `methods`→modal→`verify:true`+codes→wrong-code error) урсгал **DAN хэрэглэгчид хүрэшгүй** — зөвхөн **non-DAN оролцогчид** (email/SMS OTP) л ажиллана. Мөн DAN хэрэглэгчид `verify:false` нь өөрөө destructive (шууд гарын үсэг зурдаг, dry-run алга).
+- **Дүгнэлт:** хүрэх боломжтой бүх зам ✅ PASS; OTP branch = зөвхөн code-review confidence (login-2FA two-phase pattern-тэй ижил, батлагдсан). Хэрэглэгч "accept code-confidence" сонгов. Жинхэнэ OTP урсгалыг шалгахад **non-DAN test account** хэрэгтэй.
+- ⚠️ **Санамсаргүй жинхэнэ гарын үсэг:** wrong-OTP probe төлөвлөсөн ("гарын үсэг үүсэхгүй") боловч DAN OTP алгассан тул гэрээ бодитоор SIGNED боллоо. Хохирол бага (өөрийн test, 2 тал өөрөө). 2d-3 (digital/DAN) ба цаашид энэ account дээр аливаа sign тест = жинхэнэ SIGNED гэдгийг санах.
 
-- `DigitalSignature` component + `digital-signature-select-modal`.
-- g-sign: `createSignRequest` → `sendRequestGSign(phone, pdfSignRequestId)` → socket (`getDigitalSignatureSocketUrl`) → status poll. e-mongolia/DAN redirect урсгал.
-- `registerDigitalSignCert`, `getUrlByOtp`.
-- **Үр дүн:** тоон гарын үсэг ажиллана. Effort: **xhigh**.
+### ✅ 2d-3 (GSIGN): Digital signature — DUUSSAN (2026-07-07, commit `1ac18a2`)
+**Хэрэглэгчийн шийдвэр (2026-07-07):** хамрах хүрээ = **GSIGN only** (DAN/e-Mongolia утасны push); TRIDUM (суусан desktop клиент) → **2d-3b** хойшлуулав. Тест = **code-confidence + UI-хүртэл** (жинхэнэ гарын үсэг гүйцээхгүй).
 
-### ⏸️ 2d-4 (сонголт): Payment — ХОЙШЛУУЛСАН (2d-3-тэй хамт)
+**Understand-workflow (6 parallel reader) гол нээлтүүд:**
+- ⚠️ **Plan хуучирсан:** `FlowActionDock.tsx` (commit `9e6409b`) нь `c2c07e5`-д УСТСАН, `ActionButtons.tsx`-д нэгтгэгдсэн. Зорилтот = `ActionButtons` + `action-status.ts`. `FlowActionDock` дахин үүсгэхГҮЙ.
+- ✅ `onDigitalSign` hook аль хэдийн бэлэн (`ActionButtons.tsx:240-245` flowClick, default noop). `getFlowAction` digitalSign kind буцаана. `ActionButtons` **засвар хэрэггүй** — зөвхөн ContractDetail-д handler дамжуулна.
+- ✅ **Backend v2-тэй ИЖИЛ хост** (`digital-signature-api.e-geree.mn/digital-signature-api/v1`) → v2 контракт = эх сурвалж, протокол-эрсдэл бага (approve/review шиг).
+- ✅ **Envelope faithful port:** `coreFetcher` `{isOk: res.ok, data: rawBody}` (HTTP статусаар), v2 `httpRequest`-тэй ижилхэн → v2-т `data.otp` уншсан бол v3-т unwrap-ийн дараа `.otp`. Микросервис ялгаагүй.
+- ⚠️ **v3-т socket infra ОГТ алга** — scratch-аас барьсан. `socket.io-client@^4` суулгав (v2 = `^4.7.5`, server socket.io — major тааруулав).
+- Env бэлэн (утаслагдаагүй байсан): `DIGITAL_SIGNATURE_URL` (base version-baked), `NEXT_PUBLIC_DIGITAL_SIGNATURE_SOCKET_URL`. Утас = `user.userProfile.mobile` (top-level `phone` биш).
+
+**Барьсан (7 өөрчлөлт, GSIGN):**
+- `core/config/index.ts`: `getDigitalSignatureUrl()` (getPaymentUrl-ийн хуулбар, E2E override).
+- **New** `app/backend/digital-signature/[...path]/route.ts` (payment route хуулбар, POST+GET). Route folder = URL segment, `[...path]` upstream руу форвардлана; base version-baked тул path давхар version нэмэхгүй.
+- `documents/api/client.ts`: `createSignRequest` (POST `/digital-signature/pdf-sign-request/create`), `sendGSignRequest` (GET `/g-sign/contract/sign?...`) + `CreateSignRequestPayload`/`SignRequestResult` types.
+- `documents/api/queries.ts`: `useStartGSign` — create+g-sign-ийг **нэг мутацид нэгтгэв**, буцаах утга = socket room key (`pdfSignRequestId`). `otp/inputPdfUrl/id` дутуу бол throw (v2-ийн `data.otp && data.inputPdfUrl` guard-ийн порт). invalidate ЭНД биш — socket `sign`-ийн дараа ContractDetail хийнэ.
+- **New** `documents/components/detail/DigitalSignModal.tsx` — GSIGN modal: утас (userProfile.mobile-аас preset) → push → waiting (socket wait) → success/error. shadcn Dialog + raw Монгол текст (detail-ийн house-style, i18n нэмэлтгүй). **v2-ийн 2 bug зассан:** (1) module-level socket leak → useEffect cleanup `socket.disconnect()`; (2) transport failure дээр мөнхөд өлгөгдөх → `connect_error` handler нэмэв. `onSignedRef` (render-т ref бичихгүй, effect-т) reconnect churn-аас сэргийлнэ.
+- `ContractDetail.tsx`: `handleDigitalSign` (modal нээх) + `handleDigitalSigned` (socket амжилтад `queryClient.invalidateQueries(detail)` + toast + хаах); `onDigitalSign={handleDigitalSign}` дамжуулав; `<DigitalSignModal>` render.
+
+**Socket контракт (v2 порт):** `io(\`${base}/digital-signature\`, {transports:['websocket'], withCredentials:true})` → `connect` дээр `emit('join-room',{room:pdfSignRequestId})` → `on('sign', JSON.parse→{result,message})`. success=result; `"User cancelled the request"`→татгалзсан; бусад→алдаа.
+
+**eslint нээлт:** (1) render үед `ref.current=` бичих нь `react-hooks/refs` error → effect руу. (2) useEffect дотор синхрон setState = `react-hooks/set-state-in-effect` (3x) → **render-т compare-and-set** (`prevOpen` transition, ContractDetail-ийн `seededFieldList` idiom-тэй ижил); socket-base check submit руу зөөв.
+
+**Verify:** tsc 0 · eslint 0 (шинэ/өөрчилсөн файл; зөвхөн pre-existing `CopyIconButton` warning ContractDetail-д, 2d-2c-ийн, минийх биш) · knip шинэ мэдэгдэлгүй · vitest 28/28 · **`npm run build` exit 0** (route бүртгэгдсэн, socket.io-client bundle/SSR цэвэр).
+**Хийгдээгүй runtime-verify:** live UI-drive DAN push хүртэл — `DIGITAL_SIGNATURE_PENDING` статустай гэрээ шаардана (одоо бэлэн алга; гүйцээвэл ЖИНХЭНЭ SIGNED). Code-confidence (v2 faithful port + ижил backend) хүрсэн. **DEPLOY санамж:** `DIGITAL_SIGNATURE_URL`/`NEXT_PUBLIC_DIGITAL_SIGNATURE_SOCKET_URL` env prod-д хэрэгтэй (.env gitignored).
+
+**✅ Env audit (2026-07-07):** `.env.production` + `.env.development` локалд аль хэдийн зөв утгатай (`DIGITAL_SIGNATURE_URL=.../digital-signature-api/v1`, `NEXT_PUBLIC_DIGITAL_SIGNATURE_SOCKET_URL=https://digital-signature-socket.e-geree.mn`). Хоёулаа gitignored (commit хийгдээгүй) тул `npm run build` цэвэр байсан нь локал файлаас. **Үлдэц = ops, код биш:** deploy target (Docker/CI) эдгээр 2 var-г файлаар унших/inject хийхийг батлах — кодоос шалгах боломжгүй.
+
+### ⏸️ 2d-3b: Digital signature (TRIDUM) — ХОЙШЛУУЛСАН (2026-07-07, хэрэглэгчийн шийдвэр)
+Суусан desktop гарын үсгийн клиент (raw WebSocket `ws://127.0.0.1:59001`, `useTridumSign` hook). GSIGN-ээс тусдаа урсгал: version probe (`{Command:'99'}`) → `{Command:'4', OTP, SignLocation, PDFFiles}` → `getUrlByOtp` + `registerDigitalSignCert` (`/signed-pdf/save-serial-number`). Location calc = `DIGITAL_SIGNED` action тоогоор. Config getter/BFF route аль хэдийн бэлэн (POST+GET хангалттай). Цөөнх (суусан программтай) хэрэглэгчид зориулсан — эрэлт гарвал хийнэ.
+
+### ⏸️ 2d-4 (сонголт): Payment — ХОЙШЛУУЛСАН (2d-3b-тэй хамт)
 - pay товч → `getPaymentByContractRequest` + төлбөрийн урсгал. Тусдаа effort.
 
 ---
@@ -132,7 +163,7 @@ Phase 2d = эдгээрийн **2FA/гарын үсгийн урсгалыг** �
 | Verification modal | v2 `action-verification-modal` порт, shadcn Dialog + `input-otp` | v3-т `input-otp` бий (Phase 1 password modal). |
 | OTP verify API | `sendVerificationRequest`/OTP endpoint — backend тулга | v2 lib-ээс нарийн endpoint авах. |
 | Signing UI | pdf-viewer-new-тэй нэгтгэнэ | Талбар бөглөх нь viewer дээр. Тусдаа effort. |
-| taskVerified | 2d-2-т DAN холбоно; 2d-1 хүртэл `true` хэвээр | 2c-ийн placeholder тайлбар. |
+| taskVerified | ~~2d-2-т DAN холбоно~~ → **холбохгүй** (2026-07-07 audit): dead type талбар, client gate байхгүй, backend enforce | v3-т client-side sign-gate портлогдоогүй — зөв дизайн. |
 
 ---
 
@@ -192,13 +223,22 @@ Phase 2d = эдгээрийн **2FA/гарын үсгийн урсгалыг** �
 | 2d-2a | Талбар ДИСПЛЕЙ (read-only, `fields` prop) | pdf-viewer view-only | **low** | **Sonnet** ✅ дууссан |
 | 2d-2b | Талбар ФИЛЛ (SIGN_PENDING) | 2d-2a + type | ~~high~~ **low** (бодит) | ~~Opus~~ **Sonnet** ✅ дууссан |
 | 2d-2c | OTP verify + submit finalize (sign/review/approve) | 2d-2b | ~~xhigh~~ **medium** (бодит) | ~~Opus~~ **Sonnet** ✅ дууссан |
-| 2d-3 | Digital signature (g-sign/DAN) | 2d-2c | **xhigh** | **Opus 4.8** |
-| 2d-4 | Payment (сонголт) | — | high | Opus/Sonnet |
+| 2d-3 | Digital signature (**GSIGN** / DAN) | 2d-2c | ~~xhigh~~ **medium** (бодит) | Opus (ultracode workflow) ✅ дууссан |
+| 2d-3b | Digital signature (TRIDUM, суусан клиент) | 2d-3 | high | Opus/Sonnet — хойшлогдсон |
+| 2d-4 | Payment (сонголт) | — | high | Opus/Sonnet — хойшлогдсон |
 
 **Дүрэм:** sub-phase бүр = ШИНЭ чат + verify+commit. Механик хэсэг (endpoint/hook/type өргөтгөл, pattern-following display) → Sonnet subagent; нарийн урсгалын логик (interactive edit, OTP/sign/socket) → Opus. caveman + ponytail хэвээр.
 
 ### Санал болгох эхлэл
-2d-2a, 2d-2b, 2d-2c ✅ дууссан (commit `8dd7531`). **2d-3, 2d-4 хойшлогдсон** — хэрэглэгчийн шийдвэрээр "бүр дараа" хийнэ, одоохондоо зөвхөн доорх задаргаа тэмдэглэл хэлбэрээр үлдэнэ. Дахин эхлэхэд эхлээд: (1) 2d-2c-ийн OTP урсгалыг browser дээр гар аргаар баталгаажуулах (authenticated session + бодит SIGN_PENDING/REVIEW_PENDING гэрээ), дараа нь (2) 2d-3-аас үргэлжлүүлэх.
+2d-2a, 2d-2b, 2d-2c ✅ (commit `8dd7531`). **2d-3 GSIGN ✅ дууссан** (2026-07-07, commit `1ac18a2`; static+build verify PASS, live UI-drive хийгээгүй).
+
+**Үлдэгдэл дараалал (2026-07-07 санал, эрсдэл × өртөг):**
+1. ~~Prod env утаслах~~ ✅ audit: локал зөв, gitignored; deploy inject батлах (ops).
+2. ~~`taskVerified` тулга~~ ✅ audit: dead field, gate байхгүй, backend enforce. Хийх зүйл алга.
+3. **non-DAN OTP live-verify** — 2d-2c OTP branch одоо зөвхөн code-confidence; non-DAN test account хэрэгтэй (SIGNED болгодог тул test-only).
+4. **2d-3 GSIGN live-verify** — `DIGITAL_SIGNATURE_PENDING` гэрээ гармагц DAN push хүртэл жолоодох.
+5. **2d-3b (TRIDUM) / 2d-4 (Payment)** — хойшлогдсон, эрэлтээр.
+- signature-input UI: preset (`signatureImgUrl`) хангаж байгаа тул YAGNI, эрэлт гарвал.
 
 ### Чат стратеги (токен)
 - Sub-phase бүр ШИНЭ чат: seed = энэ note + тухайн v2 эх сурвалж + зорилтот v3 файл.
