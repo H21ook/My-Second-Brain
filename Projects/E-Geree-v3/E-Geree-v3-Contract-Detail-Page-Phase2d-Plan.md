@@ -115,9 +115,17 @@ Phase 2d = эдгээрийн **2FA/гарын үсгийн урсгалыг** �
 - ✅ `fieldsIncomplete` guard: талбар дутуу үед Approve дарахад **сүлжээ хүсэлт гарахгүй** (fill tab руу).
 - ✅ 2d-2b fill/signature preset: "Гарын үсэг зурах" → `signatureImgUrl` apply → PDF live preview.
 - ✅ `verify:false` payload ЯГ зөв: `POST /backend/public-api/v1/contract-action/approve` `{verify:false, participantKey:"participant2", contractRequestId, contractActionId, contractFieldList:[7 талбар]}`. Response handling (apiClient unwrap), `onSuccess` conditional-invalidate, detail refetch, PDF `temporary-contract→contract`, түүх "гарын үсэг зурсан", 2 оролцогч ✓ — БҮГД ажиллана. Гэрээ **SIGNED** боллоо.
-- ⚠️ **ГОЛ НЭЭЛТ — DAN нь OTP-г алгасдаг:** энэ хэрэглэгч `userVerifiedType:"DAN_VERIFIED"`. Backend `verify:false`-д **`methods` буцаадаггүй**, шууд SIGNED болгодог. Тиймээс `!data.methods` салаа шатдаг → `SecurityVerificationModal` **огт нээгддэггүй**. Өөрөөр хэлбэл 2d-2c-ийн ГОЛ (OTP `methods`→modal→`verify:true`+codes→wrong-code error) урсгал **DAN хэрэглэгчид хүрэшгүй** — зөвхөн **non-DAN оролцогчид** (email/SMS OTP) л ажиллана. Мөн DAN хэрэглэгчид `verify:false` нь өөрөө destructive (шууд гарын үсэг зурдаг, dry-run алга).
+- ⚠️ **~~ГОЛ НЭЭЛТ — DAN нь OTP-г алгасдаг~~ — 2026-07-07 live-verify-д БУРУУ нь батлагдав (доор үз): `methods` = хэрэглэгчийн идэвхжүүлсэн EMAIL/SMS/2FA-аар gate, `danVerified`-тай хамаагүй. Энэ account-д арга идэвхгүй байсан тул л шууд SIGNED болсон.** ~~энэ хэрэглэгч `userVerifiedType:"DAN_VERIFIED"`. Backend `verify:false`-д **`methods` буцаадаггүй**, шууд SIGNED болгодог. Тиймээс `!data.methods` салаа шатдаг → `SecurityVerificationModal` **огт нээгддэггүй**. Өөрөөр хэлбэл 2d-2c-ийн ГОЛ (OTP `methods`→modal→`verify:true`+codes→wrong-code error) урсгал **DAN хэрэглэгчид хүрэшгүй** — зөвхөн **non-DAN оролцогчид** (email/SMS OTP) л ажиллана. Мөн DAN хэрэглэгчид `verify:false` нь өөрөө destructive (шууд гарын үсэг зурдаг, dry-run алга).~~
 - **Дүгнэлт:** хүрэх боломжтой бүх зам ✅ PASS; OTP branch = зөвхөн code-review confidence (login-2FA two-phase pattern-тэй ижил, батлагдсан). Хэрэглэгч "accept code-confidence" сонгов. Жинхэнэ OTP урсгалыг шалгахад **non-DAN test account** хэрэгтэй.
 - ⚠️ **Санамсаргүй жинхэнэ гарын үсэг:** wrong-OTP probe төлөвлөсөн ("гарын үсэг үүсэхгүй") боловч DAN OTP алгассан тул гэрээ бодитоор SIGNED боллоо. Хохирол бага (өөрийн test, 2 тал өөрөө). 2d-3 (digital/DAN) ба цаашид энэ account дээр аливаа sign тест = жинхэнэ SIGNED гэдгийг санах.
+
+**🔬 non-DAN OTP LIVE-VERIFY — DUUSSAN ✅ (2026-07-07, chrome-devtools, хувь хүн профайл `khishigbayar.u`, EMAIL+2FA идэвхжсэн; гэрээ `6a0fcf9c…d473` "Sender - Employee transfer or delete test", participant2 SIGN_PENDING):**
+- 🔑 **ЗАЛРУУЛГА (өмнөх DAN-загвар буруу):** `methods` нь хэрэглэгчийн **идэвхжүүлсэн verification-оор** (EMAIL/SMS/2FA) gate хийгддэг, `danVerified`-тай ХАМААГҮЙ. Нотолгоо: энэ account `userVerifiedType:"DAN_VERIFIED"` мөртлөө EMAIL+2FA идэвхтэй тул `methods:{EMAIL:true,"2FA":true}` буцаалаа. `action.userVerifiedType:"UN_VERIFIED"` ≠ non-DAN дохио (андуурч болохгүй).
+- ✅ approve `verify:false` → `{requireAuthorization:true, methods:{EMAIL:true,"2FA":true}, expireDate}`; SIGNED болоогүй (detail refetch гараагүй).
+- ✅ `SecurityVerificationModal` нээгдэв: 2 талбар (И-мэйл + 2FA, label зөв), countdown 274s→ ажиллав.
+- ✅ `verify:true`, `codes:{EMAIL,"2FA"}` dynamic multi-method payload зөв → `status:"SIGNED"` → success invalidate → detail refetch, addition-file, PDF `temporary→contract`, түүх, rail→meta.
+- ⚠️ Тестлээгүй (хэрэглэгч зөв кодоор шууд дуусгасан): буруу-код backend-reject error branch + `retrySendCode` — code-confidence хэвээр.
+- **Дүгнэлт:** OTP submit урсгал (methods→modal→verify:true+codes→SIGNED) **бүрэн live-PASS**. Гэрээ бодитоор SIGNED.
 
 ### ✅ 2d-3 (GSIGN): Digital signature — DUUSSAN (2026-07-07, commit `1ac18a2`)
 **Хэрэглэгчийн шийдвэр (2026-07-07):** хамрах хүрээ = **GSIGN only** (DAN/e-Mongolia утасны push); TRIDUM (суусан desktop клиент) → **2d-3b** хойшлуулав. Тест = **code-confidence + UI-хүртэл** (жинхэнэ гарын үсэг гүйцээхгүй).
@@ -147,11 +155,43 @@ Phase 2d = эдгээрийн **2FA/гарын үсгийн урсгалыг** �
 
 **✅ Env audit (2026-07-07):** `.env.production` + `.env.development` локалд аль хэдийн зөв утгатай (`DIGITAL_SIGNATURE_URL=.../digital-signature-api/v1`, `NEXT_PUBLIC_DIGITAL_SIGNATURE_SOCKET_URL=https://digital-signature-socket.e-geree.mn`). Хоёулаа gitignored (commit хийгдээгүй) тул `npm run build` цэвэр байсан нь локал файлаас. **Үлдэц = ops, код биш:** deploy target (Docker/CI) эдгээр 2 var-г файлаар унших/inject хийхийг батлах — кодоос шалгах боломжгүй.
 
-### ⏸️ 2d-3b: Digital signature (TRIDUM) — ХОЙШЛУУЛСАН (2026-07-07, хэрэглэгчийн шийдвэр)
-Суусан desktop гарын үсгийн клиент (raw WebSocket `ws://127.0.0.1:59001`, `useTridumSign` hook). GSIGN-ээс тусдаа урсгал: version probe (`{Command:'99'}`) → `{Command:'4', OTP, SignLocation, PDFFiles}` → `getUrlByOtp` + `registerDigitalSignCert` (`/signed-pdf/save-serial-number`). Location calc = `DIGITAL_SIGNED` action тоогоор. Config getter/BFF route аль хэдийн бэлэн (POST+GET хангалттай). Цөөнх (суусан программтай) хэрэглэгчид зориулсан — эрэлт гарвал хийнэ.
+### ✅ 2d-3b: Digital signature (TRIDUM) — DUUSSAN (2026-07-07, static+unit verify PASS; commit `a710337`)
+Суусан desktop гарын үсгийн клиент (raw WebSocket `ws://127.0.0.1:59001`). GSIGN-ээс тусдаа урсгал: version probe (`{Command:'99'}`) → `{Command:'4', OTP, SignLocation, PDFFiles}` → `getUrlByOtp` + `registerDigitalSignCert`. Location calc = `DIGITAL_SIGNED` action тоогоор.
 
-### ⏸️ 2d-4 (сонголт): Payment — ХОЙШЛУУЛСАН (2d-3b-тэй хамт)
-- pay товч → `getPaymentByContractRequest` + төлбөрийн урсгал. Тусдаа effort.
+**Барьсан (5 өөрчлөлт, v2 `use-tridum.js` + `digital-signature-select-modal` faithful порт):**
+- `api/client.ts`: `CreateSignRequestPayload.type` → `"GSIGN" | "TRIDUM"`; шинэ `getSignedUrlByOtp` (GET `/signed-pdf/url-by-otp`), `registerDigitalSignCert` (POST `/signed-pdf/save-serial-number`). BFF POST+GET аль хэдийн хангасан.
+- **New** `lib/tridum.ts`: `calcTridumLocation(actionList)` — 2 баганаар (тэгш→зүүн X0.1, сондгой→баруун X0.55; мөр Y+0.1) шатлана. `ponytail: pdfPageNumber v3-т үргэлж null → base page 1`. + `tridum.test.ts` (4 байрлал, toBeCloseTo — FP).
+- **New** `components/detail/use-tridum-sign.ts`: localhost WS hook. `getVersionStatus` (`{Command:'99'}` 1s probe → шинэ клиент бол PageNumber хасахгүй) → `{Command:'4'}` sign → response parse (`SignResult===0` эсвэл 1–10/`7:regNum` error-код Монгол текст). v2-оос сайжруулсан: unmount-д `wsRef` хаана.
+- `components/detail/DigitalSignModal.tsx`: method radio (GSIGN/TRIDUM) нэмэв. GSIGN = хуучин утас+socket урсгал (method guard-тай); TRIDUM = `createSignRequest(type:TRIDUM)` → `sendTridumSignRequest` → `onResponse`-д `getSignedUrlByOtp`+`registerDigitalSignCert` → `onSigned`. `actionList` prop нэмэв.
+- `components/ContractDetail.tsx`: `actionList={data.actionList}` дамжуулав.
+
+**Verify:** tsc 0 · eslint 0 (hook нэр kebab `use-tridum-sign.ts` болгосон, check-file дүрэм) · vitest 30/30 · knip шинэ флаггүй · `npm run build` OK.
+**Хийгдээгүй runtime-verify (2d-3-тэй ижил хязгаар):** (1) UI-drive — `DIGITAL_SIGNATURE_PENDING` гэрээ шаардана (одоо алга); (2) TRIDUM WS — суусан `ws://127.0.0.1:59001` десктоп клиент шаардана (энд алга). Тиймээс code-confidence (v2 faithful порт + ижил backend). Гүйцээвэл ЖИНХЭНЭ DIGITAL_SIGNED.
+
+### ✅ 2d-4: Payment — DUUSSAN (2026-07-07, static verify PASS; commit `ff09d0b`)
+pay товч → төлбөрийн урсгал. v2 = глобал `PaymentProvider` context (subscription+template+contract 3 модалд) — v3 contract-д хэт эвдэрхий тул **self-contained modal** (нэг л хэрэглэгч, context барихгүй — ponytail).
+
+**Барьсан (6 өөрчлөлт):**
+- `core/config`: **New** `getPaymentUrlV2()` — v2 `payment/initiate` л /v2-т байдаг. `PAYMENT_URL` нь /v1-ээр baked тул /v2 руу regex-ээр сольж гаргана; `PAYMENT_URL_V2` env байвал эрхэмлэнэ (`ponytail: тусдаа env-гүй локалд ажиллана, deploy override сонгол`).
+- **New** `app/backend/payment-v2/[...path]/route.ts` — /v2 BFF (POST+GET; initiate=POST).
+- `documents/api/client.ts`: `getPaymentByContractRequest` (дүн), `getPaymentMethodList`, `paymentInitiate` (/payment-v2), `checkPaymentStatus` + type-ууд (`PaymentInfo`/`PaymentMethod`/`PaymentInitiatePayload`/`PaymentInitiateResult`).
+- **New** `components/detail/ContractPaymentModal.tsx` — getPaymentByContractRequest+method жагсаалт (useQuery) → арга сонгох → initiate → **QPay** бол QR(base64)+deeplink + payment socket (`${base}/payment` room=`number`) `pending`→success; **redirect** арга (SOCIAL_PAY/BANK_CARD/ARD) бол шинэ таб (popup blocked→ижил таб); "Төлбөр шалгах" товч = `checkPaymentStatus` (conservative truthy — money-path, эргэлзвэл socket эрхэмлэнэ). НӨАТ баримт = оролцогчийн төрлөөс авто.
+- `ContractDetail.tsx`: `onPay={handlePay}` (ActionButtons-ийн бэлэн placeholder-руу) + `handlePaid` (invalidate+toast+хаах) + modal render.
+
+**Verify:** tsc 0 · eslint 0 · vitest 30/30 · knip шинэ флаггүй · `npm run build` OK (payment-v2 route бүртгэгдсэн).
+**Хойшлуулсан (ponytail, эрэлтээр):** NuatSection (НӨАТ баримтын төрлийг ГАРААР солих UI — одоо профайлаас авто); redirect методын popup-blocker gymnastics (v2 about:blank pre-open) хялбарчилсан; subscription/public-template төлбөр (энэ фазын хамрах хүрээнд биш).
+**DEPLOY санамж:** `PAYMENT_URL_V2` prod-д тодорхойлох (эсвэл `PAYMENT_URL` нь `/v1`-ээр төгсөж байгаа эсэхийг батлах — regex fallback түүнд түшиглэдэг).
+
+---
+
+## 🔬 Live-verify pending (орчин бэлдсэний дараа — 2026-07-07 хэрэглэгчийн санамж)
+GSIGN, TRIDUM, Payment гурвуулаа **static+build code-confidence** төвшинд DUUSSAN; жинхэнэ runtime-verify нь тусгай орчин шаардана:
+| Үйлдэл | Live-test-д хэрэгтэй орчин |
+|---|---|
+| **GSIGN** | `DIGITAL_SIGNATURE_PENDING` статустай гэрээ + DAN утасны push хүлээн авах утас |
+| **TRIDUM** | Дээрхийн адил гэрээ + суусан `ws://127.0.0.1:59001` десктоп клиент |
+| **Payment** | `paymentType:"PAY"` + `paymentStatus:"PENDING"` гэрээ + QPay/банк sandbox + `PAYMENT_URL_V2` env |
+Орчин бэлэн болмогц non-DAN OTP-той ижил байдлаар chrome-devtools-оор жолоодож батална (бүгд ЖИНХЭНЭ гүйлгээ/гарын үсэг үүсгэнэ гэдгийг санах).
 
 ---
 
@@ -224,8 +264,8 @@ Phase 2d = эдгээрийн **2FA/гарын үсгийн урсгалыг** �
 | 2d-2b | Талбар ФИЛЛ (SIGN_PENDING) | 2d-2a + type | ~~high~~ **low** (бодит) | ~~Opus~~ **Sonnet** ✅ дууссан |
 | 2d-2c | OTP verify + submit finalize (sign/review/approve) | 2d-2b | ~~xhigh~~ **medium** (бодит) | ~~Opus~~ **Sonnet** ✅ дууссан |
 | 2d-3 | Digital signature (**GSIGN** / DAN) | 2d-2c | ~~xhigh~~ **medium** (бодит) | Opus (ultracode workflow) ✅ дууссан |
-| 2d-3b | Digital signature (TRIDUM, суусан клиент) | 2d-3 | high | Opus/Sonnet — хойшлогдсон |
-| 2d-4 | Payment (сонголт) | — | high | Opus/Sonnet — хойшлогдсон |
+| 2d-3b | Digital signature (TRIDUM, суусан клиент) | 2d-3 | high | ✅ дууссан (2026-07-07, static verify) |
+| 2d-4 | Payment (сонголт) | — | high | ✅ дууссан (2026-07-07, static verify) |
 
 **Дүрэм:** sub-phase бүр = ШИНЭ чат + verify+commit. Механик хэсэг (endpoint/hook/type өргөтгөл, pattern-following display) → Sonnet subagent; нарийн урсгалын логик (interactive edit, OTP/sign/socket) → Opus. caveman + ponytail хэвээр.
 
@@ -235,9 +275,9 @@ Phase 2d = эдгээрийн **2FA/гарын үсгийн урсгалыг** �
 **Үлдэгдэл дараалал (2026-07-07 санал, эрсдэл × өртөг):**
 1. ~~Prod env утаслах~~ ✅ audit: локал зөв, gitignored; deploy inject батлах (ops).
 2. ~~`taskVerified` тулга~~ ✅ audit: dead field, gate байхгүй, backend enforce. Хийх зүйл алга.
-3. **non-DAN OTP live-verify** — 2d-2c OTP branch одоо зөвхөн code-confidence; non-DAN test account хэрэгтэй (SIGNED болгодог тул test-only).
-4. **2d-3 GSIGN live-verify** — `DIGITAL_SIGNATURE_PENDING` гэрээ гармагц DAN push хүртэл жолоодох.
-5. **2d-3b (TRIDUM) / 2d-4 (Payment)** — хойшлогдсон, эрэлтээр.
+3. ~~**non-DAN OTP live-verify**~~ ✅ DUUSSAN (2026-07-07): EMAIL+2FA идэвхжсэн account-аар methods→modal→verify:true+codes→SIGNED бүрэн live-PASS. Залруулга: methods = enabled verification-оор gate, danVerified-тай хамаагүй. (Үлдэц: буруу-код/retry branch = code-confidence.)
+4. ~~**2d-3b (TRIDUM)**~~ ✅ DUUSSAN (2026-07-07, static verify) · ~~**2d-4 (Payment)**~~ ✅ DUUSSAN (2026-07-07, static verify).
+5. **Live-verify pending (орчин бэлдсэний дараа):** GSIGN / TRIDUM / Payment — дээрх "🔬 Live-verify pending" хүснэгт үз.
 - signature-input UI: preset (`signatureImgUrl`) хангаж байгаа тул YAGNI, эрэлт гарвал.
 
 ### Чат стратеги (токен)
